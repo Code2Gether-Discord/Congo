@@ -9,7 +9,7 @@ This is a learning project that consists of three projects and is led by three a
 2. Pick an issue from the issues list or create one. You are allowed to pick any issue you would like to work on because after all this is a fun learning project. 
 3. Create a branch off the dev(development) branch, master is only for stable releases
 4. Name the new branch depending on what the issue is about, for example:
-   - **bug fix:** bug/issueNumber-title 
+   - **bug fix:** fix/issueNumber-title 
    - **feature:** feature/issueNumber-title
 5. When submitting a Pull request make sure that you are merging in to the dev branch, remember to use closing keywords in the description aswell so that any related issue closes. Just type `fixes #issueNumber` or `closes #issueNumber`
 
