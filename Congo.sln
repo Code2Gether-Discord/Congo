@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congo.WebApi", "src\Congo.W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congo.RazorPages", "src\Congo.RazorPages\Congo.RazorPages.csproj", "{A463C438-132C-4B58-8194-D1CE0C36103E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congo.Blazor", "src\Congo.Blazor\Congo.Blazor.csproj", "{AFFBCA99-CAD4-4A65-BE63-55AB660EA7FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{A463C438-132C-4B58-8194-D1CE0C36103E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A463C438-132C-4B58-8194-D1CE0C36103E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A463C438-132C-4B58-8194-D1CE0C36103E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFBCA99-CAD4-4A65-BE63-55AB660EA7FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFBCA99-CAD4-4A65-BE63-55AB660EA7FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFBCA99-CAD4-4A65-BE63-55AB660EA7FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFBCA99-CAD4-4A65-BE63-55AB660EA7FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
