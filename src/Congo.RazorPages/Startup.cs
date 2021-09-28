@@ -20,8 +20,8 @@ namespace Congo.RazorPages
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.ConfigureAppServices();
-            services.ConfigureHttpClients();
+            services.AddAppServices();
+            services.AddHttpClients();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
