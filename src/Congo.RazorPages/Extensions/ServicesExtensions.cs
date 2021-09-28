@@ -11,7 +11,7 @@ namespace Congo.RazorPages.Extensions
             services.AddScoped<IProductsService, ProductsService>();
         }
 
-        public static void ConfigureHttpClients(this IServiceCollection services)
+        public static void AddHttpClients(this IServiceCollection services)
         {
             services.AddHttpClient("Congo", config =>
             {
