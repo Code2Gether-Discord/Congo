@@ -6,7 +6,7 @@ namespace Congo.RazorPages.Extensions
 {
     public static class ServicesExtensions
     {
-        public static void ConfigureAppServices(this IServiceCollection services)
+        public static void AddAppServices(this IServiceCollection services)
         {
             services.AddScoped<IProductsService, ProductsService>();
         }
