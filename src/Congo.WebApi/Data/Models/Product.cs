@@ -8,15 +8,13 @@ namespace Congo.WebApi.Data.Models
 {
     public class Product
     {
-        [Key]
-        public string Id { get; init; } = Guid.NewGuid().ToString();
 
-        [Required]
+        public Guid Id { get; init; }
+
         public string Name { get; set; }
 
         public string Description { get; set; }
 
-        [Required]
         public decimal Price { get; set; }
 
         public string ImageUrl { get; set; }
