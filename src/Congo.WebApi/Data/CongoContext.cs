@@ -14,7 +14,7 @@ namespace Congo.WebApi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            new ProductEntityTypeConfiguration().Configure(modelBuilder.Entity<Product>());
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CongoContext).Assembly);
 
             base.OnModelCreating(modelBuilder);
         }
