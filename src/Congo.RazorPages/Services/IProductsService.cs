@@ -7,5 +7,6 @@ namespace Congo.RazorPages.Services
     public interface IProductsService
     {
         Task<IEnumerable<Product>> GetProducts();
+        List<Product> GetSampleProducts();
     }
 }
