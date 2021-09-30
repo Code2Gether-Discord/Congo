@@ -12,6 +12,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MediatR;
+using Congo.WebApi.DataAccess;
+using Congo.WebApi.Queries;
+using Congo.WebApi.Controllers;
+using Congo.WebApi.Handlers;
+
 
 namespace Congo.WebApi
 {
@@ -34,6 +40,10 @@ namespace Congo.WebApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Congo.WebApi", Version = "v1" });
             });
+            //v DEMO PURPOSE ONLY v
+            services.AddSingleton<IDemoProductDataAccess, DemoProductDataAccess>();
+            //Mediatr service added here vv
+            services.AddMediatR(typeof(Startup).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
