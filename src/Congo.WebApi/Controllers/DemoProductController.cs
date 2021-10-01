@@ -9,7 +9,6 @@ using MediatR;
 using Congo.WebApi.Data;
 using Congo.WebApi.Data.ProductAccess;
 
-using Congo.WebApi.Commands;
 
 
 namespace Congo.WebApi.Controllers
@@ -20,7 +19,7 @@ namespace Congo.WebApi.Controllers
     public class DemoProductController : Controller
     {
         //THIS IS PURELY FOR DEMO PURPOSES 
-        //Mediatr is wired up to this controller and our calls made are to a mock DB access layer called DemoProductDataAccess
+        //Mediatr is wired up to this controller and our calls made are to a DB 
         private readonly CongoContext _congoDb;
         private readonly IMediator _mediator;//we create this so we cn inject the mediatr service when the project is first built
         public DemoProductController(CongoContext congoDb, IMediator mediator)
