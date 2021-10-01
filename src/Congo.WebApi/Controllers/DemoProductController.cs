@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 using MediatR;
 using Congo.WebApi.Data;
 using Congo.WebApi.DataAccess;
-using Congo.WebApi.Queries;
-using Congo.WebApi.Handlers;
+using Congo.WebApi.Data.ProductAccess;
+
 using Congo.WebApi.Commands;
 
 
@@ -22,9 +22,8 @@ namespace Congo.WebApi.Controllers
     {
         //THIS IS PURELY FOR DEMO PURPOSES 
         //Mediatr is wired up to this controller and our calls made are to a mock DB access layer called DemoProductDataAccess
-        private List<Product> products;
         private readonly CongoContext _congoDb;
-        private readonly IMediator _mediator;//we create this so we cn inject the mediatr service when the project is firt built
+        private readonly IMediator _mediator;//we create this so we cn inject the mediatr service when the project is first built
         public DemoProductController(CongoContext congoDb, IMediator mediator)
         {
             _congoDb = congoDb;
@@ -36,11 +35,11 @@ namespace Congo.WebApi.Controllers
         {
             return await _mediator.Send(new GetProductListQuery());
         }
-        [HttpGet("{id}")]   
-        public async Task<Product> Get(Guid id)
-        {
-            return await _mediator.Send(new GetProductByIdQuery(id));
-        }
+        //[HttpGet("{id}")]   
+        //public async Task<Product> Get(Guid id)
+        //{
+        //    return await _mediator.Send(new GetProductByIdQuery(id));
+        //}
         [HttpPost]
         public async Task<Product> Post([FromBody]Product value)
         {

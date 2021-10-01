@@ -1,6 +1,8 @@
 ﻿using Congo.WebApi.Data.Configurations;
 using Congo.WebApi.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Congo.WebApi.Data
 {
@@ -18,5 +20,6 @@ namespace Congo.WebApi.Data
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
