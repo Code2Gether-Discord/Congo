@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Congo.WebApi.Data.Configurations;
+using Congo.WebApi.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Congo.WebApi.Data
 {
@@ -6,6 +8,15 @@ namespace Congo.WebApi.Data
     {
         public CongoContext(DbContextOptions<CongoContext> options) : base(options)
         {
+        }
+
+        public DbSet<Product> Products { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(CongoContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
