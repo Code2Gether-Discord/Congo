@@ -22,11 +22,11 @@ namespace Congo.RazorPages.Services
             return await client.GetFromJsonAsync<IEnumerable<Product>>(_productsUri);
         }
 
-        public List<Product> GetSampleProducts()
+        public IEnumerable<Product> GetSampleProducts()
         {
             return new List<Product>()
             {
-                 new()
+                new()
                 {
                     Id = 1,
                     Title = "Screwdriver",
@@ -53,7 +53,7 @@ namespace Congo.RazorPages.Services
                     Title = "5-Piece Gardening Kit",
                     Price = 34.99m,
                     ImageUrl = "https://via.placeholder.com/150"
-                }, 
+                },
                 new()
                 {
                     Id = 5,
