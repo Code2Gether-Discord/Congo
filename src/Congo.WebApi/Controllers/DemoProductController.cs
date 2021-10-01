@@ -7,7 +7,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Congo.WebApi.Data;
-using Congo.WebApi.DataAccess;
 using Congo.WebApi.Data.ProductAccess;
 
 using Congo.WebApi.Commands;
@@ -34,16 +33,6 @@ namespace Congo.WebApi.Controllers
         public async Task<List<Product>> Get()
         {
             return await _mediator.Send(new GetProductListQuery());
-        }
-        //[HttpGet("{id}")]   
-        //public async Task<Product> Get(Guid id)
-        //{
-        //    return await _mediator.Send(new GetProductByIdQuery(id));
-        //}
-        [HttpPost]
-        public async Task<Product> Post([FromBody]Product value)
-        {
-            return await _mediator.Send(new InsertProductCommand(value.Name, value.Description, value.Price, value.ImageUrl));
         }
         
     }
