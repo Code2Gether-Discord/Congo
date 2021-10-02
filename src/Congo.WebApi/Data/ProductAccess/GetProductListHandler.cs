@@ -15,9 +15,8 @@ namespace Congo.WebApi.Data.ProductAccess
         }   
         public Task<List<Product>> Handle(GetProductListQuery request, CancellationToken cancellationToken)
         {
-            // ToDo Implimend Method To call a list of Products from DB
+            // TODO Impliment method to call a list of products from database.
             return Task.FromResult(new List<Product>());
         }
-
     }
 }
