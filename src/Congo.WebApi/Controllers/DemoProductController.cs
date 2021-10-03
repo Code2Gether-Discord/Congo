@@ -13,17 +13,17 @@ namespace Congo.WebApi.Controllers
     public class DemoProductController : Controller
     {
         // THIS IS PURELY FOR DEMO PURPOSES 
-        private readonly IMediator _mediator; // We create this so we can inject the mediatr service when the project is first built
+        private readonly IMediator _mediator;
+
         public DemoProductController(IMediator mediator)
         {
            _mediator = mediator;
         }
 
         [HttpGet]
-        public async Task<List<Product>> Get()
+        public async Task<IEnumerable<Product>> Get()
         {
             return await _mediator.Send(new GetProductListQuery());
         }
-
     }
 }

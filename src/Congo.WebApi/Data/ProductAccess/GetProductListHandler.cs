@@ -1,22 +1,25 @@
 ﻿using Congo.WebApi.Data.Models;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Congo.WebApi.Data.ProductAccess
 {
-    public class GetProductListHandler : IRequestHandler<GetProductListQuery, List<Product>>
+    public class GetProductListHandler : IRequestHandler<GetProductListQuery, IEnumerable<Product>>
     {
         private readonly CongoContext _dbContext;
+
         public GetProductListHandler(CongoContext dbContext)
         {
             _dbContext = dbContext;
-        }   
-        public Task<List<Product>> Handle(GetProductListQuery request, CancellationToken cancellationToken)
+        }
+
+        public Task<IEnumerable<Product>> Handle(GetProductListQuery request, CancellationToken cancellationToken)
         {
-            // TODO Impliment method to call a list of products from database.
-            return Task.FromResult(new List<Product>());
+            return Task.FromResult(_dbContext.Products.AsNoTracking().AsEnumerable());
         }
     }
 }
