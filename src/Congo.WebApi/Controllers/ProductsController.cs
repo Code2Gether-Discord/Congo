@@ -1,9 +1,10 @@
-﻿using Congo.WebApi.Data;
+﻿using Congo.WebApi.Contracts.Responses;
+using Congo.WebApi.Data;
 using Congo.WebApi.Data.Models;
 using Congo.WebApi.Data.ProductAccess;
-using Congo.WebApi.Models.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,12 +12,12 @@ namespace Congo.WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : Controller
+    public class DemoProductController : Controller
     {
         // THIS IS PURELY FOR DEMO PURPOSES 
         private readonly IMediator _mediator;
 
-        public ProductsController(IMediator mediator)
+        public DemoProductController(IMediator mediator)
         {
            _mediator = mediator;
         }
@@ -27,19 +28,12 @@ namespace Congo.WebApi.Controllers
             return await _mediator.Send(new GetProductListQuery());
         }
 
-        [HttpPost]
-        [Route("~/api/{seller}/products")]
-        public bool Create(ProductInputModel product)
+        [HttpPost("{id}/purchase")]
+        public ActionResult<OrderConfirmationResponse> Purchase(Guid id)
         {
-            if(!ModelState.IsValid)
-            {
-                return false;
-            }
+            var orderId = Guid.NewGuid();
 
-            _mediator.Send(new InsertProductCommand
-                (product.Name, product.Description, product.Price, product.ImageUrl));
-
-            return true;
+            return new OrderConfirmationResponse { OrderId = orderId };
         }
     }
 }
