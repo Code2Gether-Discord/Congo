@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Congo.WebApi.Models.Products
 {
-    public class ProductInputModel
+    public class InsertProductRequest
     {
         [Required]
         public string Name { get; set; }
@@ -14,6 +14,7 @@ namespace Congo.WebApi.Models.Products
         public string Description { get; set; }
 
         [Required]
+        [Range(0, (double)Decimal.MaxValue)]
         public decimal Price { get; set; }
 
         public string ImageUrl { get; set; }

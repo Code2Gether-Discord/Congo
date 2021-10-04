@@ -15,7 +15,6 @@ namespace Congo.WebApi.Controllers
     [Route("api/[controller]")]
     public class ProductsController : Controller
     {
-        // THIS IS PURELY FOR DEMO PURPOSES 
         private readonly IMediator _mediator;
 
         public ProductsController(IMediator mediator)
@@ -32,15 +31,10 @@ namespace Congo.WebApi.Controllers
 
         [HttpPost]
         [Route("~/api/{seller}/products")]
-        public ActionResult<Product> Create(ProductInputModel product)
+        public async Task<ActionResult> Create(InsertProductRequest product)
         {
-            if (!ModelState.IsValid)
-            {
-                return ValidationProblem(ModelState);
-            }
-
-            var productResult = _mediator.Send(new InsertProductCommand
-                (product.Name, product.Description, product.Price, product.ImageUrl)).Result;
+            var productResult = await _mediator.Send(new InsertProductCommand
+                (product.Name, product.Description, product.Price, product.ImageUrl));
 
             return Ok(productResult);
         }
@@ -51,7 +45,6 @@ namespace Congo.WebApi.Controllers
             var orderId = Guid.NewGuid();
 
             return new OrderConfirmationResponse { OrderId = orderId };
-
         }
     }
 }

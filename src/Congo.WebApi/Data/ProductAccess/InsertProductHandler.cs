@@ -8,14 +8,16 @@ using MediatR;
 
 namespace Congo.WebApi.Data.ProductAccess
 {
-    public class InsertProductHelper : IRequestHandler<InsertProductCommand, Product>
+    public class InsertProductHandler : IRequestHandler<InsertProductCommand>
     {
-
         private readonly CongoContext _dbContext;
 
-        public InsertProductHelper(CongoContext dbContext) => _dbContext = dbContext;
+        public InsertProductHandler(CongoContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
-        public async Task<Product> Handle(InsertProductCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(InsertProductCommand request, CancellationToken cancellationToken)
         {
             var product = new Product
             {
@@ -29,7 +31,7 @@ namespace Congo.WebApi.Data.ProductAccess
 
             await _dbContext.SaveChangesAsync();
 
-            return product;
+            return Unit.Value;
         }
     }
 }
