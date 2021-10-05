@@ -26,8 +26,6 @@ namespace Congo.WebApi.Controllers
             return await _mediator.Send(new GetProductListQuery());
         }
 
-
-       
         [HttpPost("{id}/purchase")]
         public ActionResult<OrderConfirmationResponse> Purchase(Guid id)
         {
