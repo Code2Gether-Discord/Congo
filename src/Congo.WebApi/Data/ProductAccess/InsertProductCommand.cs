@@ -4,6 +4,5 @@ using MediatR;
 
 namespace Congo.WebApi.Data.ProductAccess
 {
-    // TODO: This needs a Handler
-    public record InsertProductCommand(string Name, string Description, decimal Price, string ImageUrl) : IRequest;
+    public record InsertProductCommand(string Name, string Description, decimal Price, string ImageUrl) : IRequest<Guid>;
 }

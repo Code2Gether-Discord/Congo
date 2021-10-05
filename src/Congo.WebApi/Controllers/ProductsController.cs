@@ -1,8 +1,6 @@
 ﻿using Congo.WebApi.Contracts.Responses;
-using Congo.WebApi.Data;
 using Congo.WebApi.Data.Models;
 using Congo.WebApi.Data.ProductAccess;
-using Congo.WebApi.Models.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -29,16 +27,7 @@ namespace Congo.WebApi.Controllers
         }
 
 
-        [HttpPost]
-        [Route("~/api/{seller}/products")]
-        public async Task<ActionResult> Create(InsertProductRequest product)
-        {
-            var productResult = await _mediator.Send(new InsertProductCommand
-                (product.Name, product.Description, product.Price, product.ImageUrl));
-
-            return Ok(productResult);
-        }
-
+       
         [HttpPost("{id}/purchase")]
         public ActionResult<OrderConfirmationResponse> Purchase(Guid id)
         {
