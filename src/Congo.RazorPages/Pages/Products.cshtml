@@ -1,4 +1,4 @@
-@page
+@page 
 @model ProductsModel
 @{
   ViewData["Title"] = "Products";
@@ -15,6 +15,15 @@
           <h4>@product.Title</h4>
           <p>$@product.Price</p>
         </div>
+          <form
+                method="post"
+                asp-route-id="@product.Id"
+          >
+            <button
+            >
+                Purchase!
+            </button>
+          </form>
       </div>
     }
   </div>
