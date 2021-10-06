@@ -1,6 +1,4 @@
 using Congo.WebApi.Extensions;
-using Mapster;
-using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,10 +29,6 @@ namespace Congo.WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Congo.WebApi", Version = "v1" });
             });
             services.AddMediatR(typeof(Startup).Assembly);
-
-            var config = new TypeAdapterConfig();
-            services.AddSingleton(config);
-            services.AddScoped<IMapper, ServiceMapper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
