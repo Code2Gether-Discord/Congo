@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Orders;
-using Congo.WebApi.Data.Models;
+using Congo.Contracts.Responses.Products;
 using Congo.WebApi.Data.ProductAccess;
+using MapsterMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,16 +14,20 @@ namespace Congo.WebApi.Controllers
     public class ProductsController : Controller
     {
         private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
 
-        public ProductsController(IMediator mediator)
+
+        public ProductsController(IMediator mediator, IMapper mapper)
         {
             _mediator = mediator;
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Product>> Get()
+        public async Task<ActionResult<ProductResponse>> Get()
         {
-            return await _mediator.Send(new GetProductListQuery());
+            var products = await _mediator.Send(new GetProductListQuery());
+            return Ok(_mapper.Map<ProductResponse[]>(products));
         }
 
         [HttpPost("{id}/purchase")]
