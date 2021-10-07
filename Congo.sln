@@ -12,6 +12,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congo.Blazor", "src\Congo.Blazor\Congo.Blazor.csproj", "{AFFBCA99-CAD4-4A65-BE63-55AB660EA7FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Congo.Contracts", "src\Congo.Contracts\Congo.Contracts.csproj", "{65330B2E-F3BE-468A-8D19-4E32486C6F15}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C800FFCE-E5BD-4E0D-AD53-44C303F94439}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

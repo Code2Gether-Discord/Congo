@@ -1,25 +1,23 @@
-﻿using Congo.WebApi.Contracts.Responses;
-using Congo.WebApi.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Congo.Contracts.Responses.Orders;
 using Congo.WebApi.Data.Models;
 using Congo.WebApi.Data.ProductAccess;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Congo.WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class DemoProductController : Controller
+    public class ProductsController : Controller
     {
-        // THIS IS PURELY FOR DEMO PURPOSES 
         private readonly IMediator _mediator;
 
-        public DemoProductController(IMediator mediator)
+        public ProductsController(IMediator mediator)
         {
-           _mediator = mediator;
+            _mediator = mediator;
         }
 
         [HttpGet]
