@@ -9,6 +9,7 @@ namespace Congo.RazorPages.Pages
     {
         public IEnumerable<Product> SampleData;
         private readonly IProductsService _productsService;
+        public string Message { get; set; } 
 
         public ProductsModel(IProductsService productsService)
         {
@@ -18,6 +19,12 @@ namespace Congo.RazorPages.Pages
         public void OnGet()
         {
             SampleData = _productsService.GetSampleProducts();
+        }
+
+        public void OnPostPurchase(int id)
+        {
+            _productsService.PurchaseProduct(id);
+            Message = $"Thanks for buying product with id: ${id}"; 
         }
     }
 }

@@ -6,6 +6,10 @@
 
 <h1>Products</h1>
 <div class="container-fluid">
+@if (Model.Message != null)
+{
+    <h2>@Model.Message</h2>
+} 
   <div class="row">
     @foreach (var product in Model.SampleData)
      {
@@ -15,11 +19,15 @@
             <h4>@product.Title</h4>
             <p>$@product.Price</p>
         </div>
-        <button
-          class="btn btn-primary mx-2 my-4"
-        >
-          Purchase
-        </button>
+            <form
+                  method="post" asp-page-handler="OnPostPurchase"
+            >
+                <button
+                  class="btn btn-primary mx-2 my-4"
+                >
+                  Purchase
+                </button>
+            </form>
         </div>
      }
   </div>

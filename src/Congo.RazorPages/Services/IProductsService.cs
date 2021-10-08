@@ -8,5 +8,6 @@ namespace Congo.RazorPages.Services
     {
         Task<IEnumerable<Product>> GetProducts();
         IEnumerable<Product> GetSampleProducts();
+        void PurchaseProduct(int id);
     }
 }
