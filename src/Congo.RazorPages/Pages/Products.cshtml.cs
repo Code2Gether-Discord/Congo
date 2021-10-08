@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Congo.RazorPages.Models;
 using Congo.RazorPages.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Congo.RazorPages.Pages
@@ -9,7 +10,9 @@ namespace Congo.RazorPages.Pages
     {
         public IEnumerable<Product> SampleData;
         private readonly IProductsService _productsService;
-        public string Message { get; set; } 
+
+        // we mark this with [TempData] attribute so this property is stored between when we post & when we refresh the page
+        [TempData] public string Message { get; set; }
 
         public ProductsModel(IProductsService productsService)
         {
@@ -21,10 +24,11 @@ namespace Congo.RazorPages.Pages
             SampleData = _productsService.GetSampleProducts();
         }
 
-        public void OnPostPurchase(int id)
+        public ActionResult OnPostPurchase(int id)
         {
             _productsService.PurchaseProduct(id);
-            Message = $"Thanks for buying product with id: ${id}"; 
+            Message = $"Thanks for buying product with id: ${id}";
+            return RedirectToPage(); // refresh the page
         }
     }
 }

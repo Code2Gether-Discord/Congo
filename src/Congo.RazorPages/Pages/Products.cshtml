@@ -1,34 +1,33 @@
-@page 
+@page
 @model ProductsModel
 @{
-  ViewData["Title"] = "Products";
+    ViewData["Title"] = "Products";
 }
 
 <h1>Products</h1>
 <div class="container-fluid">
-@if (Model.Message != null)
-{
-    <h2>@Model.Message</h2>
-} 
-  <div class="row">
-    @foreach (var product in Model.SampleData)
-     {
-        <div class="card col-sm-12 col-md-4 col-lg-3 m-1">
-        <img class="card-img-top pt-3" src="@product.ImageUrl" alt="placeholder">
-        <div class="card-body">
-            <h4>@product.Title</h4>
-            <p>$@product.Price</p>
+    @if (Model.Message != null)
+    {
+        <h2>@Model.Message</h2>
+    }
+
+    <form method="post">
+        <div class="row">
+            @foreach (var product in Model.SampleData)
+            {
+                <div class="card col-sm-12 col-md-4 col-lg-3 m-1">
+                    <img class="card-img-top pt-3" src="@product.ImageUrl" alt="placeholder">
+                    <div class="card-body">
+                        <h4>@product.Title</h4>
+                        <p>$@product.Price</p>
+                    </div>
+
+                    <!-- for asp-page-handler you only need the part after the "OnGet"/"OnPost" -->
+                    <button class="btn btn-primary mx-2 my-4" asp-page-handler="purchase" asp-route-id="@product.Id">
+                        Purchase
+                    </button>
+                </div>
+            }
         </div>
-            <form
-                  method="post" asp-page-handler="OnPostPurchase"
-            >
-                <button
-                  class="btn btn-primary mx-2 my-4"
-                >
-                  Purchase
-                </button>
-            </form>
-        </div>
-     }
-  </div>
+    </form>
 </div>
