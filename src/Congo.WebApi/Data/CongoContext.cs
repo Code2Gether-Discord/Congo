@@ -18,5 +18,6 @@ namespace Congo.WebApi.Data
 
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
