@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Orders;
-using Congo.WebApi.Data.Models;
+using Congo.Contracts.Responses.Products;
 using Congo.WebApi.Data.ProductAccess;
+using Mapster;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,9 +22,10 @@ namespace Congo.WebApi.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Product>> Get()
+        public async Task<ActionResult<IEnumerable<ProductResponse>>> Get()
         {
-            return await _mediator.Send(new GetProductListQuery());
+            var products = await _mediator.Send(new GetProductListQuery());
+            return Ok(products.Adapt<IEnumerable<ProductResponse>>());
         }
 
         [HttpPost("{id}/purchase")]
