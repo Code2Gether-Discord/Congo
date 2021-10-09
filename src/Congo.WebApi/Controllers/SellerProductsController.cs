@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+using Congo.Contracts.Requests.Products;
 using Congo.WebApi.Data.ProductAccess;
-using Congo.WebApi.Models.Products;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
