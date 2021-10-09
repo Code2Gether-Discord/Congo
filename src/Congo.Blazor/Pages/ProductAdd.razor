@@ -1,6 +1,6 @@
 ﻿@page "/products/add"
 @using System.ComponentModel.DataAnnotations
-@using Models
+@using Congo.Contracts.Requests.Products
 
 <MudLink Href="/">Back to Home</MudLink>
 
@@ -26,7 +26,7 @@
 
 @code {
     MudForm form;
-    Product Product = new Product();
+    InsertProductRequest Product = new InsertProductRequest();
 
     void Submit(EditContext editContext)
     {
