@@ -1,17 +1,7 @@
-<MudNavMenu Class="pt-2" >
-	<MudText Typo="Typo.h6" Class="px-4">Hello, Congo.</MudText>
-	@*<MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Secondary Text</MudText>*@
-	<MudDivider Class="my-2" />
-	<MudNavLink Href="/dashboard">Dashboard</MudNavLink>
+<MudNavMenu>
+    <MudNavLink Href="/dashboard" Icon="@Icons.Filled.Dashboard" Style="@($"color:{Colors.Green.Accent3};")">Dashboard</MudNavLink>
+    <MudNavLink Href="/fetchdata" Icon="@Icons.Filled.Analytics">Fetch Data</MudNavLink>
+    <MudNavGroup Title="Settings" Icon="@Icons.Filled.Settings" Expanded="false">
+        <MudNavLink Href="/users" Icon="@Icons.Filled.People" IconColor="Color.Success">Users</MudNavLink>
+    </MudNavGroup>
 </MudNavMenu>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
