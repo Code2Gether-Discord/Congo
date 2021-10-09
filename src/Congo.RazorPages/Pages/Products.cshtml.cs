@@ -27,7 +27,7 @@ namespace Congo.RazorPages.Pages
         public ActionResult OnPostPurchase(int id)
         {
             _productsService.PurchaseProduct(id);
-            Message = $"Thanks for buying product with id: ${id}";
+            Message = $"Thanks for buying product with id: {id}";
             return RedirectToPage(); // refresh the page
         }
     }
