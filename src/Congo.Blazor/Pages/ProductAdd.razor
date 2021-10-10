@@ -1,0 +1,35 @@
+﻿@page "/products/add"
+@using System.ComponentModel.DataAnnotations
+@using Congo.Contracts.Requests.Products
+
+<MudLink Href="/">Back to Home</MudLink>
+
+<EditForm Model="@Product" OnValidSubmit="@Submit">
+    <DataAnnotationsValidator />
+    <MudCard>
+        <MudCardHeader>
+            <MudText Typo="Typo.h6">Add a Product</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudForm @ref="form">
+                <MudTextField @bind-Value="Product.Name" Label="Name" Required="true" RequiredError="Product name is required" />
+                <MudTextField @bind-Value="Product.Description" Label="Description" Required="true" RequiredError="Product description is required" />
+                <MudNumericField @bind-Value="Product.Price" Label="Price" Required="true" Variant="Variant.Text" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.AttachMoney" HideSpinButtons="true" />
+                <MudTextField @bind-Value="Product.ImageUrl" Label="Image Url" Required="true" RequiredError="Product image url is required" />
+            </MudForm>
+        </MudCardContent>
+        <MudCardActions>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
+        </MudCardActions>
+    </MudCard>
+</EditForm>
+
+@code {
+    MudForm form;
+    InsertProductRequest Product = new InsertProductRequest();
+
+    void Submit(EditContext editContext)
+    {
+        StateHasChanged();
+    }
+}
