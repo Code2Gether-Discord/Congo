@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Congo.Contracts.Responses.Orders;
 using Congo.RazorPages.Models;
+using Newtonsoft.Json;
 
 namespace Congo.RazorPages.Services
 {
@@ -19,7 +22,7 @@ namespace Congo.RazorPages.Services
         public async Task<IEnumerable<Product>> GetProducts()
         {
             var client = _httpClientFactory.CreateClient(nameof(Congo));
-            return await client.GetFromJsonAsync<IEnumerable<Product>>(_productsUri);
+            return await client.GetFromJsonAsync<IEnumerable<Product>>($"/api/{_productsUri}");
         }
 
         public IEnumerable<Product> GetSampleProducts()
@@ -28,75 +31,87 @@ namespace Congo.RazorPages.Services
             {
                 new()
                 {
-                    Id = 1,
+                    Id = Guid.NewGuid(),
                     Title = "Screwdriver",
                     Price = 5.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 2,
+                    Id = Guid.NewGuid(),
                     Title = "AMD Ryzen 7 5900X",
                     Price = 499.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 3,
+                    Id = Guid.NewGuid(),
                     Title = "A Rock",
                     Price = 0.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 4,
+                    Id = Guid.NewGuid(),
                     Title = "5-Piece Gardening Kit",
                     Price = 34.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 5,
+                    Id = Guid.NewGuid(),
                     Title = "Box of Chocolates",
                     Price = 9.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 6,
+                    Id = Guid.NewGuid(),
                     Title = "Window Cleaning Solution",
                     Price = 4.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 7,
+                    Id = Guid.NewGuid(),
                     Title = "Paper shredder",
                     Price = 44.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 8,
+                    Id = Guid.NewGuid(),
                     Title = "Xbox Controller",
                     Price = 119.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 9,
+                    Id = Guid.NewGuid(),
                     Title = "LED Light Bulb - 8 pack",
                     Price = 44.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
                 new()
                 {
-                    Id = 10,
+                    Id = Guid.NewGuid(),
                     Title = "A Dance With Dragons - Hard Cover",
                     Price = 39.99m,
                     ImageUrl = "https://via.placeholder.com/150"
                 },
             };
+        }
+
+        public async Task<Guid> Purchase(Guid productId)
+        {
+            /* Uses the HttpClientFactory directly for now, will change it to use
+            Refit when it gets implemented. */
+            var client = _httpClientFactory.CreateClient(nameof(Congo));
+            var response = await client.PostAsync($"/api/{_productsUri}/{productId}/purchase", null);
+            var content = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<OrderConfirmationResponse>(content);
+            return result.OrderId;
+
         }
     }
 }

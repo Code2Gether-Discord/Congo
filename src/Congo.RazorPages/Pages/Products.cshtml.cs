@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Congo.RazorPages.Models;
 using Congo.RazorPages.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Congo.RazorPages.Pages
@@ -15,9 +17,11 @@ namespace Congo.RazorPages.Pages
             _productsService = productsService;
         }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGet()
         {
-            SampleData = _productsService.GetSampleProducts();
+            SampleData = await _productsService.GetProducts();
+
+            return Page();
         }
     }
 }
