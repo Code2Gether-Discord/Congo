@@ -4,16 +4,16 @@
 <MudSnackbarProvider />
 
 <MudLayout>
-	<MudAppBar Elevation="1">
-		<MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(() => DrawerToggle())" />
+	<MudAppBar Elevation="3">
+		<MudIconButton Icon="@Icons.Material.Filled.Menu" Style="@($"color:{Colors.Green.Accent2};")" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())"/>
 		@*<MudText Typo="Typo.h5" Class="ml-3">Dashboard</MudText>*@
 		<MudSpacer />
 	</MudAppBar>
 	<MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2" Color="Color.Dark">
-		<NavMenu />
-	</MudDrawer>
+        <NavMenu />
+    </MudDrawer>
 	<MudMainContent>
-		<MudContainer MaxWidth="MaxWidth.ExtraExtraLarge">
+		<MudContainer MaxWidth="MaxWidth.Medium">
 			@Body
 		</MudContainer>
 	</MudMainContent>
