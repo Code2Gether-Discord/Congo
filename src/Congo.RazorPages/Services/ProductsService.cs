@@ -5,7 +5,6 @@ using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Orders;
 using Congo.RazorPages.Models;
-using Newtonsoft.Json;
 
 namespace Congo.RazorPages.Services
 {
@@ -108,10 +107,8 @@ namespace Congo.RazorPages.Services
             Refit when it gets implemented. */
             var client = _httpClientFactory.CreateClient(nameof(Congo));
             var response = await client.PostAsync($"/api/{_productsUri}/{productId}/purchase", null);
-            var content = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<OrderConfirmationResponse>(content);
+            var result = await response.Content.ReadFromJsonAsync<OrderConfirmationResponse>();
             return result.OrderId;
-
         }
     }
 }

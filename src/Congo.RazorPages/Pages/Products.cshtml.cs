@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Congo.RazorPages.Models;
@@ -26,10 +27,10 @@ namespace Congo.RazorPages.Pages
             return Page();
         }
 
-        public ActionResult OnPostPurchase(int id)
+        public async Task<IActionResult> OnPostPurchase(Guid id)
         {
-            _productsService.PurchaseProduct(id);
-            Message = $"Thanks for buying product with id: {id}";
+            var orderId = await _productsService.Purchase(id);
+            Message = $"Thanks for buying product with id: {orderId}";
             return RedirectToPage(); // refresh the page
         }
     }
