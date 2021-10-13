@@ -98,5 +98,10 @@ namespace Congo.RazorPages.Services
                 },
             };
         }
+
+        public void PurchaseProduct(int id)
+        {
+            //
+        }
     }
 }
