@@ -11,7 +11,6 @@ namespace Congo.RazorPages.Pages
         public IEnumerable<Product> SampleData;
         private readonly IProductsService _productsService;
 
-        // we mark this with [TempData] attribute so this property is stored between when we post & when we refresh the page
         [TempData] public string Message { get; set; }
 
         public ProductsModel(IProductsService productsService)

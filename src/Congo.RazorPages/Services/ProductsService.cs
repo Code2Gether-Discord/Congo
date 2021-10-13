@@ -99,7 +99,7 @@ namespace Congo.RazorPages.Services
             };
         }
 
-        public void PurchaseProduct(int id )
+        public void PurchaseProduct(int id)
         {
             //
         }

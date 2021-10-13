@@ -21,8 +21,6 @@
                         <h4>@product.Title</h4>
                         <p>$@product.Price</p>
                     </div>
-
-                    <!-- for asp-page-handler you only need the part after the "OnGet"/"OnPost" -->
                     <button class="btn btn-primary mx-2 my-4" asp-page-handler="purchase" asp-route-id="@product.Id">
                         Purchase
                     </button>
