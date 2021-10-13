@@ -12,6 +12,8 @@ namespace Congo.RazorPages.Pages
         public IEnumerable<Product> SampleData;
         private readonly IProductsService _productsService;
 
+        [TempData] public string Message { get; set; }
+
         public ProductsModel(IProductsService productsService)
         {
             _productsService = productsService;
@@ -22,6 +24,13 @@ namespace Congo.RazorPages.Pages
             SampleData = await _productsService.GetProducts();
 
             return Page();
+        }
+
+        public ActionResult OnPostPurchase(int id)
+        {
+            _productsService.PurchaseProduct(id);
+            Message = $"Thanks for buying product with id: {id}";
+            return RedirectToPage(); // refresh the page
         }
     }
 }
