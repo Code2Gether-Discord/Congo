@@ -30,7 +30,7 @@ namespace Congo.RazorPages.Pages
         public async Task<IActionResult> OnPostPurchase(Guid id)
         {
             var orderId = await _productsService.Purchase(id);
-            Message = $"Thanks for buying product with id: {orderId}";
+            Message = $"Thanks for your purchase. Your order number is: {orderId}";
             return RedirectToPage(); // refresh the page
         }
     }
