@@ -20,7 +20,7 @@ namespace Congo.RazorPages.Pages
             _productsService = productsService;
         }
 
-        public async Task<IActionResult> OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
             SampleData = await _productsService.GetProducts();
 
@@ -29,8 +29,8 @@ namespace Congo.RazorPages.Pages
 
         public async Task<IActionResult> OnPostPurchase(Guid id)
         {
-            var orderId = await _productsService.Purchase(id);
-            Message = $"Thanks for your purchase. Your order number is: {orderId}";
+            var order = await _productsService.PurchaseAsync(id);
+            Message = $"Thanks for your purchase. Your order number is: {order.OrderId}";
             return RedirectToPage(); // refresh the page
         }
     }

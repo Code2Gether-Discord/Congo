@@ -11,7 +11,7 @@ namespace Congo.RazorPages.Services
     public class ProductsService : IProductsService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly string _productsUri = $"/api/Products";
+        private readonly string _productsUri = $"Products";
 
         public ProductsService(IHttpClientFactory httpClientFactory)
         {
@@ -24,14 +24,14 @@ namespace Congo.RazorPages.Services
             return await client.GetFromJsonAsync<IEnumerable<Product>>($"{_productsUri}");
         }
 
-        public async Task<Guid> Purchase(Guid productId)
+        public async Task<OrderConfirmationResponse> PurchaseAsync(Guid productId)
         {
             /* Uses the HttpClientFactory directly for now, will change it to use
             Refit when it gets implemented. */
             var client = _httpClientFactory.CreateClient(nameof(Congo));
             var response = await client.PostAsync($"{_productsUri}/{productId}/purchase", null);
             var result = await response.Content.ReadFromJsonAsync<OrderConfirmationResponse>();
-            return result.OrderId;
+            return result;
         }
     }
 }

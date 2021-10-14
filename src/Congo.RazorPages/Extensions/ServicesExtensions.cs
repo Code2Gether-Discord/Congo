@@ -15,7 +15,7 @@ namespace Congo.RazorPages.Extensions
         {
             services.AddHttpClient(nameof(Congo), config =>
             {
-                config.BaseAddress = new Uri("https://localhost:44388/");
+                config.BaseAddress = new Uri("https://localhost:44388/api/");
             });
         }
     }
