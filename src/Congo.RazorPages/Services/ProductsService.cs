@@ -11,7 +11,7 @@ namespace Congo.RazorPages.Services
     public class ProductsService : IProductsService
     {
         private readonly IHttpClientFactory _httpClientFactory;
-        private readonly string _productsUri = $"{nameof(Product)}s";
+        private readonly string _productsUri = $"/api/Products";
 
         public ProductsService(IHttpClientFactory httpClientFactory)
         {
@@ -21,84 +21,7 @@ namespace Congo.RazorPages.Services
         public async Task<IEnumerable<Product>> GetProducts()
         {
             var client = _httpClientFactory.CreateClient(nameof(Congo));
-            return await client.GetFromJsonAsync<IEnumerable<Product>>($"/api/{_productsUri}");
-        }
-
-        public IEnumerable<Product> GetSampleProducts()
-        {
-            return new List<Product>()
-            {
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "Screwdriver",
-                    Price = 5.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "AMD Ryzen 7 5900X",
-                    Price = 499.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "A Rock",
-                    Price = 0.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "5-Piece Gardening Kit",
-                    Price = 34.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "Box of Chocolates",
-                    Price = 9.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "Window Cleaning Solution",
-                    Price = 4.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "Paper shredder",
-                    Price = 44.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "Xbox Controller",
-                    Price = 119.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "LED Light Bulb - 8 pack",
-                    Price = 44.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-                new()
-                {
-                    Id = Guid.NewGuid(),
-                    Title = "A Dance With Dragons - Hard Cover",
-                    Price = 39.99m,
-                    ImageUrl = "https://via.placeholder.com/150"
-                },
-            };
+            return await client.GetFromJsonAsync<IEnumerable<Product>>($"{_productsUri}");
         }
 
         public async Task<Guid> Purchase(Guid productId)
@@ -106,7 +29,7 @@ namespace Congo.RazorPages.Services
             /* Uses the HttpClientFactory directly for now, will change it to use
             Refit when it gets implemented. */
             var client = _httpClientFactory.CreateClient(nameof(Congo));
-            var response = await client.PostAsync($"/api/{_productsUri}/{productId}/purchase", null);
+            var response = await client.PostAsync($"{_productsUri}/{productId}/purchase", null);
             var result = await response.Content.ReadFromJsonAsync<OrderConfirmationResponse>();
             return result.OrderId;
         }
