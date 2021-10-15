@@ -19,11 +19,13 @@ namespace Congo.Blazor
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddMudServices();
 
+            var congoApiUri = new Uri("https://localhost:44388");
+
             builder.Services.AddRefitClient<ICongoUserClient>()
-               .ConfigureHttpClient(x => x.BaseAddress = new Uri("https://localhost:44388"));
+               .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
 
             builder.Services.AddRefitClient<ICongoSellerClient>()
-                .ConfigureHttpClient(x => x.BaseAddress = new Uri("https://localhost:44388"));
+                .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
 
             await builder.Build().RunAsync();
         }
