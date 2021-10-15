@@ -27,7 +27,7 @@ namespace Congo.RazorPages.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostPurchase(Guid id)
+        public async Task<IActionResult> OnPostPurchaseAsync(Guid id)
         {
             var order = await _productsService.PurchaseAsync(id);
             Message = $"Thanks for your purchase. Your order number is: {order.OrderId}";
