@@ -31,7 +31,7 @@ namespace Congo.RazorPages.Pages
         {
             var order = await _productsService.PurchaseAsync(id);
             Message = $"Thanks for your purchase. Your order number is: {order.OrderId}";
-            return RedirectToPage(); // refresh the page
+            return RedirectToPage("/OrderSuccessful", new { order.OrderId });
         }
     }
 }
