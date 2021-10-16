@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Congo.RazorPages.Models;
 using Congo.RazorPages.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -18,15 +20,17 @@ namespace Congo.RazorPages.Pages
             _productsService = productsService;
         }
 
-        public void OnGet()
+        public async Task<IActionResult> OnGetAsync()
         {
-            SampleData = _productsService.GetSampleProducts();
+            SampleData = await _productsService.GetProducts();
+
+            return Page();
         }
 
-        public ActionResult OnPostPurchase(int id)
+        public async Task<IActionResult> OnPostPurchaseAsync(Guid id)
         {
-            _productsService.PurchaseProduct(id);
-            Message = $"Thanks for buying product with id: {id}";
+            var order = await _productsService.PurchaseAsync(id);
+            Message = $"Thanks for your purchase. Your order number is: {order.OrderId}";
             return RedirectToPage(); // refresh the page
         }
     }

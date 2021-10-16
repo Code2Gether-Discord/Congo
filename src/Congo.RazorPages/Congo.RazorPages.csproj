@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Congo.Contracts\Congo.Contracts.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Congo.Contracts\Congo.Contracts.csproj" />
+  </ItemGroup>
+
 </Project>

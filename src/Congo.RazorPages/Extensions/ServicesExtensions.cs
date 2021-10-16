@@ -16,9 +16,9 @@ namespace Congo.RazorPages.Extensions
 
         public static void AddHttpClients(this IServiceCollection services, IConfiguration config)
         {
-            services.AddHttpClient("Congo", config =>
+            services.AddHttpClient(nameof(Congo), config =>
             {
-                config.BaseAddress = new Uri("/api");
+                config.BaseAddress = new Uri("https://localhost:44388/api/");
             });
 
             var congoApiUri = new Uri(config["CongoApi"]);
