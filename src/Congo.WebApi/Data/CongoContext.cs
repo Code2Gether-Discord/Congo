@@ -1,5 +1,6 @@
 ﻿using Congo.WebApi.Data.Configurations;
 using Congo.WebApi.Data.Models;
+using Congo.WebApi.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace Congo.WebApi.Data
@@ -15,6 +16,7 @@ namespace Congo.WebApi.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CongoContext).Assembly);
+            modelBuilder.Seed();
 
             base.OnModelCreating(modelBuilder);
         }
