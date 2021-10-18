@@ -6,7 +6,7 @@ namespace Congo.RazorPages.Pages
 {
     public class OrderSuccessful : PageModel
     {
-        [FromQuery(Name = "orderId")] public Guid OrderId { get; set; }
+        [FromQuery] public Guid OrderId { get; set; }
 
         public void OnGet()
         {
