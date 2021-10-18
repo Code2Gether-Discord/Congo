@@ -21,9 +21,6 @@ namespace Congo.Blazor
 
             var congoApiUri = new Uri("https://localhost:44388");
 
-            builder.Services.AddRefitClient<ICongoUserClient>()
-               .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
-
             builder.Services.AddRefitClient<ICongoSellerClient>()
                 .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
 
