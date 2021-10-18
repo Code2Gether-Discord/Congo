@@ -20,9 +20,6 @@ namespace Congo.RazorPages.Extensions
 
             services.AddRefitClient<ICongoUserClient>()
                 .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
-
-            services.AddRefitClient<ICongoSellerClient>()
-                .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
         }
     }
 }
