@@ -1,6 +1,9 @@
 ﻿using System;
+using Congo.Contracts.Clients;
 using Congo.RazorPages.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Refit;
 
 namespace Congo.RazorPages.Extensions
 {
@@ -11,12 +14,12 @@ namespace Congo.RazorPages.Extensions
             services.AddScoped<IProductsService, ProductsService>();
         }
 
-        public static void AddHttpClients(this IServiceCollection services)
+        public static void AddHttpClients(this IServiceCollection services, IConfiguration config)
         {
-            services.AddHttpClient(nameof(Congo), config =>
-            {
-                config.BaseAddress = new Uri("https://localhost:44388/api/");
-            });
+            var congoApiUri = new Uri(config["CongoApi"]);
+
+            services.AddRefitClient<ICongoUserClient>()
+                .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
         }
     }
 }

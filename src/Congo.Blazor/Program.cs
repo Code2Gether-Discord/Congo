@@ -1,13 +1,11 @@
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+using Congo.Contracts.Clients;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using MudBlazor.Services;
+using Refit;
 
 namespace Congo.Blazor
 {
@@ -20,6 +18,11 @@ namespace Congo.Blazor
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddMudServices();
+
+            var congoApiUri = new Uri("https://localhost:44388");
+
+            builder.Services.AddRefitClient<ICongoSellerClient>()
+                .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
 
             await builder.Build().RunAsync();
         }
