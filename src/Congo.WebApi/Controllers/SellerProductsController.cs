@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Congo.Contracts.Requests.Products;
 using Congo.WebApi.Data.ProductAccess;
 using MediatR;
@@ -19,12 +20,12 @@ namespace Congo.WebApi.Controllers
 
         [HttpPost]
         [Route("products")]
-        public async Task<ActionResult> Create(InsertProductRequest product)
+        public async Task<ActionResult<Guid>> Create(InsertProductRequest product)
         {
             var productId = await _mediator.Send(new InsertProductCommand
                 (product.Name, product.Description, product.Price, product.ImageUrl));
 
-            return Ok(productId);
+            return productId;
         }
     }
 }
