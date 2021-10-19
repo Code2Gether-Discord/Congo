@@ -13,7 +13,6 @@ namespace Congo.RazorPages.Pages
         public IEnumerable<ProductResponse> Products;
         private readonly IProductsService _productsService;
 
-        [TempData] public string Message { get; set; }
 
         public ProductsModel(IProductsService productsService)
         {
@@ -30,8 +29,7 @@ namespace Congo.RazorPages.Pages
         public async Task<IActionResult> OnPostPurchaseAsync(Guid id)
         {
             var order = await _productsService.PurchaseAsync(id);
-            Message = $"Thanks for your purchase. Your order number is: {order.OrderId}";
-            return RedirectToPage(); // refresh the page
+            return RedirectToPage("/OrderSuccessful", new { order.OrderId });
         }
     }
 }

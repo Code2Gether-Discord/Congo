@@ -1,0 +1,12 @@
+@page
+@model OrderSuccessful
+
+@{
+    ViewData["Title"] = "Order Successful";
+}
+
+<div class="container-fluid d-flex vh-100 flex-column justify-content-center align-items-center">
+    <h1 class="text-center">Your order has been successfully placed!</h1>
+    <h2 class="h4 text-center text-muted">Order ID: @Model.OrderId</h2>
+    <a class="btn btn-primary w-25 mt-4" asp-page="./Products">Go Back</a>
+</div>
