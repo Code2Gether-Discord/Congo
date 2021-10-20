@@ -6,19 +6,14 @@
 
 <h1>Products</h1>
 <div class="container-fluid">
-    @if (Model.Message != null)
-    {
-        <h2>@Model.Message</h2>
-    }
-
     <form method="post">
         <div class="row">
-            @foreach (var product in Model.SampleData)
+            @foreach (var product in Model.Products)
             {
                 <div class="card col-sm-12 col-md-4 col-lg-3 m-1">
-                    <img class="card-img-top pt-3" src="@product.ImageUrl" alt="placeholder">
+                    <img class="card-img-top pt-3" src="@product.ImageUrl" alt="@product.Name">
                     <div class="card-body">
-                        <h4>@product.Title</h4>
+                        <h4>@product.Name</h4>
                         <p>$@product.Price</p>
                     </div>
                     <button class="btn btn-primary mx-2 my-4" asp-page-handler="purchase" asp-route-id="@product.Id">

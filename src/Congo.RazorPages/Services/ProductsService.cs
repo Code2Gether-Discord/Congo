@@ -1,37 +1,29 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Json;
 using System.Threading.Tasks;
+using Congo.Contracts.Clients;
 using Congo.Contracts.Responses.Orders;
-using Congo.RazorPages.Models;
+using Congo.Contracts.Responses.Products;
 
 namespace Congo.RazorPages.Services
 {
     public class ProductsService : IProductsService
     {
-        private readonly IHttpClientFactory _httpClientFactory;
-        private readonly string _productsUri = $"Products";
+        private readonly ICongoUserClient _client;
 
-        public ProductsService(IHttpClientFactory httpClientFactory)
+        public ProductsService(ICongoUserClient client)
         {
-            _httpClientFactory = httpClientFactory;
+            _client = client;
         }
 
-        public async Task<IEnumerable<Product>> GetProducts()
+        public async Task<IEnumerable<ProductResponse>> GetProducts()
         {
-            var client = _httpClientFactory.CreateClient(nameof(Congo));
-            return await client.GetFromJsonAsync<IEnumerable<Product>>($"{_productsUri}");
+            return (await _client.GetProducts()).Content;
         }
 
         public async Task<OrderConfirmationResponse> PurchaseAsync(Guid productId)
         {
-            /* Uses the HttpClientFactory directly for now, will change it to use
-            Refit when it gets implemented. */
-            var client = _httpClientFactory.CreateClient(nameof(Congo));
-            var response = await client.PostAsync($"{_productsUri}/{productId}/purchase", null);
-            var result = await response.Content.ReadFromJsonAsync<OrderConfirmationResponse>();
-            return result;
+            return (await _client.PurchaseProduct(productId)).Content;
         }
     }
 }
