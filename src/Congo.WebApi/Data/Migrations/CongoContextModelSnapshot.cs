@@ -45,387 +45,387 @@ namespace Congo.WebApi.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("b4d23e20-f858-4990-ac9c-a9140c340fd9"),
+                            Id = new Guid("df524206-6e42-449b-a038-b0b504377aa9"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Screwdriver - 1",
-                            Price = 587.861012638728m
+                            Price = 735.11239774881m
                         },
                         new
                         {
-                            Id = new Guid("cf233c9e-64ed-4913-9efb-1d1f10d8a3b9"),
+                            Id = new Guid("d0b67049-b893-4d74-8f2e-7ea6371ff34d"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "AMD Ryzen 7 5900X - 1",
-                            Price = 537.646931944032m
+                            Price = 489.531479439261m
                         },
                         new
                         {
-                            Id = new Guid("dfcf4161-091b-4f0e-9933-827c09452570"),
+                            Id = new Guid("59373afd-6a02-4c67-982c-f865d7affef7"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "A Rock - 1",
-                            Price = 471.622337748368m
+                            Price = 249.522567345785m
                         },
                         new
                         {
-                            Id = new Guid("3cda992c-0696-44be-97cc-8df10bc71f6d"),
+                            Id = new Guid("c06ec66c-3fcf-47e8-b7e7-6206c2cefd4b"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "5-Piece Gardening Kit - 1",
-                            Price = 753.764422430328m
+                            Price = 37.9440138444649m
                         },
                         new
                         {
-                            Id = new Guid("f4829f61-1885-445d-b085-27ff01145116"),
+                            Id = new Guid("a7be5ba9-02a7-4ae8-8d20-f97a152b33a2"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Box of Chocolates - 1",
-                            Price = 377.584002998711m
+                            Price = 340.430887752194m
                         },
                         new
                         {
-                            Id = new Guid("c0c4d247-a2c9-4791-98d6-aad9ab17cfd6"),
+                            Id = new Guid("e95af625-b7c2-4045-88fd-813b24dc2fb0"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Window Cleaning Solution - 1",
-                            Price = 73.8752220689343m
+                            Price = 993.202131048652m
                         },
                         new
                         {
-                            Id = new Guid("39a9f23e-61b9-4918-a806-b5e2a9ca7e30"),
+                            Id = new Guid("c694133b-bdc3-4c46-8ad8-e5f4fb8924a3"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Paper shredder - 1",
-                            Price = 338.271516178177m
+                            Price = 872.441106188563m
                         },
                         new
                         {
-                            Id = new Guid("065592b6-21dd-410e-933c-653879fa5b51"),
+                            Id = new Guid("3123e82b-efbf-4d6b-872f-2bf6367384d3"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Xbox Controller - 1",
-                            Price = 275.392895792109m
+                            Price = 477.965751355279m
                         },
                         new
                         {
-                            Id = new Guid("c875c14f-49f3-483b-a302-39e82cc7ceb1"),
+                            Id = new Guid("8e51ecca-7156-4235-a988-5a2417afeb42"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "LED Light Bulb - 8 pack - 1",
-                            Price = 961.282542889385m
+                            Price = 866.037808413882m
                         },
                         new
                         {
-                            Id = new Guid("77181609-4e15-498f-83e9-fa19559bc94d"),
+                            Id = new Guid("b0ef957d-6d50-4fe2-a0c0-10aa4d4cd536"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "A Dance With Dragons - Hard Cover - 1",
-                            Price = 953.47170038242m
+                            Price = 232.62738278888m
                         },
                         new
                         {
-                            Id = new Guid("e30cb893-6cb6-4581-b60f-c9a56ad6fe4b"),
+                            Id = new Guid("b60a568e-4e60-4274-8f91-a052d9a33817"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Licensed Steel Pants - 1",
-                            Price = 238.276774297378m
+                            Price = 724.538877972899m
                         },
                         new
                         {
-                            Id = new Guid("41a40d77-fc54-448d-ab69-692b30063692"),
+                            Id = new Guid("7ecdab19-5c43-4601-bcbd-eaeaa0a232db"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Practical Steel Gloves - 1",
-                            Price = 142.504152572264m
+                            Price = 879.088016213206m
                         },
                         new
                         {
-                            Id = new Guid("a02f24bd-688a-4158-9149-8d45e3a53072"),
+                            Id = new Guid("68bfb652-b213-4b9d-8b78-2ee1626aac2c"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Refined Plastic Shoes - 1",
-                            Price = 524.00059455751m
+                            Price = 941.17099019033m
                         },
                         new
                         {
-                            Id = new Guid("95e4d7ee-bb54-4263-836f-72f266de96e3"),
+                            Id = new Guid("62edc093-3b04-47cd-a439-e3eeda99866c"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Incredible Fresh Fish - 1",
-                            Price = 761.886066321943m
+                            Price = 302.685369600642m
                         },
                         new
                         {
-                            Id = new Guid("0edeb2cc-14c6-4d2c-8d2d-682bc051a05b"),
+                            Id = new Guid("3a0ac20a-0ad8-4205-99f2-a42e50bd8188"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Practical Granite Cheese - 1",
-                            Price = 691.87050581649m
+                            Price = 625.923287144142m
                         },
                         new
                         {
-                            Id = new Guid("5ff7d4ce-9e4c-4eb2-a400-9cb22fbbbf87"),
+                            Id = new Guid("0057e354-e3a6-4e35-a1ba-29ac37ff58c3"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Sleek Soft Chair - 1",
-                            Price = 391.417987275379m
+                            Price = 615.827763782515m
                         },
                         new
                         {
-                            Id = new Guid("3119e35c-207c-473c-9b24-874d4c15d3e6"),
+                            Id = new Guid("8d954872-2091-4446-91d6-7e735613c353"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Generic Steel Chair - 1",
-                            Price = 41.5357171693192m
+                            Price = 96.2138132326043m
                         },
                         new
                         {
-                            Id = new Guid("1f884080-0c27-477c-8bdd-13d3ed0699a0"),
+                            Id = new Guid("3db3c1b1-6bcd-462d-a75b-2ee3204997cd"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Refined Concrete Shoes - 1",
-                            Price = 786.703739405718m
+                            Price = 312.456923750223m
                         },
                         new
                         {
-                            Id = new Guid("02aee507-e7c3-428a-b019-7e03c23cce03"),
+                            Id = new Guid("14d5afae-8afe-4a90-a893-69e70de32303"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Tasty Rubber Table - 1",
-                            Price = 873.345736768039m
+                            Price = 357.65077699543m
                         },
                         new
                         {
-                            Id = new Guid("3fdf91e1-6e34-45ae-baaa-6577d6c0ac33"),
+                            Id = new Guid("c70591ee-b359-49bd-a255-2ff0ca331f77"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Handmade Steel Ball - 1",
-                            Price = 609.192775326186m
+                            Price = 571.651105432856m
                         },
                         new
                         {
-                            Id = new Guid("8b36be80-305a-453e-a993-796f9f9d92a8"),
+                            Id = new Guid("955e905d-8df3-4eb3-bc75-0aa0abd34fc0"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Jewelery - 1",
-                            Price = 556.424633875934m
+                            Price = 568.240161311706m
                         },
                         new
                         {
-                            Id = new Guid("50d8b721-9f28-4351-a3b2-61d565a0540f"),
+                            Id = new Guid("e3e62012-e3ff-4d82-86b0-f5a99b6ad966"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Refined Cotton Gloves - 1",
-                            Price = 949.420151646226m
+                            Price = 77.6003369866546m
                         },
                         new
                         {
-                            Id = new Guid("90b405af-eb2a-4881-adc0-159c1b20bd0a"),
+                            Id = new Guid("db37c760-0c2e-4538-b5cc-e0349d8a02be"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Generic Rubber Pants - 1",
-                            Price = 42.4468274586726m
+                            Price = 989.187882162965m
                         },
                         new
                         {
-                            Id = new Guid("b3506d43-ad39-4d55-adf4-780f4fc561e5"),
+                            Id = new Guid("35a83ffa-4263-455c-8f6b-08c8f345da32"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Fantastic Plastic Table - 1",
-                            Price = 593.053165692176m
+                            Price = 10.3792312633755m
                         },
                         new
                         {
-                            Id = new Guid("c8ce8d0c-df45-4219-b10e-a06047b16338"),
+                            Id = new Guid("6286eda5-03b0-4202-85b3-b4c940bc773b"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Screwdriver - 2",
-                            Price = 81.2659501274097m
+                            Price = 376.266974170598m
                         },
                         new
                         {
-                            Id = new Guid("abe509ed-931e-47b1-b146-ef11eacdba61"),
+                            Id = new Guid("1ccddc82-d929-4bff-bc4c-37a98c9cd227"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "AMD Ryzen 7 5900X - 2",
-                            Price = 439.439924294581m
+                            Price = 502.557339364703m
                         },
                         new
                         {
-                            Id = new Guid("bc467e08-0749-412b-aa73-b5cf6473a708"),
+                            Id = new Guid("eeb6ad2e-4b83-4476-856a-1ecaf2a3fc1d"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "A Rock - 2",
-                            Price = 330.580072641424m
+                            Price = 668.887387973451m
                         },
                         new
                         {
-                            Id = new Guid("8bee6bd3-5a3d-4acd-92ff-1b3e17f19c65"),
+                            Id = new Guid("576262c2-1b6c-4afc-a793-7f6ef40c04f5"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "5-Piece Gardening Kit - 2",
-                            Price = 581.87636115514m
+                            Price = 966.292601162485m
                         },
                         new
                         {
-                            Id = new Guid("3a564cb8-5f7d-4f07-922c-d37c1208d801"),
+                            Id = new Guid("81b66c29-87ab-44bb-9c2a-c36b5cd00c77"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Box of Chocolates - 2",
-                            Price = 594.107494363392m
+                            Price = 702.069162118062m
                         },
                         new
                         {
-                            Id = new Guid("a1bf89e2-0a68-4b47-abed-036d84f57a4f"),
+                            Id = new Guid("f6aca19e-b58b-4aee-89e4-f3f3b993751c"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Window Cleaning Solution - 2",
-                            Price = 678.998814977952m
+                            Price = 644.96018258831m
                         },
                         new
                         {
-                            Id = new Guid("93db1755-f494-4235-a742-287aae9a0801"),
+                            Id = new Guid("989e5451-1ac7-4708-b857-b7afdfdf4560"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Paper shredder - 2",
-                            Price = 444.323827096193m
+                            Price = 104.247803103541m
                         },
                         new
                         {
-                            Id = new Guid("445715c7-1784-45f7-b09a-8c5678cc0f66"),
+                            Id = new Guid("de331009-5e5c-48aa-a7af-016cb56f4178"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Xbox Controller - 2",
-                            Price = 898.432775331644m
+                            Price = 647.110252110586m
                         },
                         new
                         {
-                            Id = new Guid("f77f21df-e0b2-4fb5-94ee-91bdf263aff7"),
+                            Id = new Guid("d18642c5-0af3-488c-9a0c-09a8ddf29ec6"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "LED Light Bulb - 8 pack - 2",
-                            Price = 460.029299889952m
+                            Price = 807.550925021563m
                         },
                         new
                         {
-                            Id = new Guid("44554661-cb9d-4e3f-997c-9fdf7fdbbd21"),
+                            Id = new Guid("74ce1df3-d52a-4be9-ab9f-49cfb1a4164c"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "A Dance With Dragons - Hard Cover - 2",
-                            Price = 707.294869266834m
+                            Price = 305.590198092684m
                         },
                         new
                         {
-                            Id = new Guid("ed0ad25a-18f1-441e-8353-18cf5cd5159c"),
+                            Id = new Guid("26b31852-b6b3-4aad-9adc-4c23ad8a5029"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Licensed Steel Pants - 2",
-                            Price = 391.074339823147m
+                            Price = 142.450918375971m
                         },
                         new
                         {
-                            Id = new Guid("4630ff4e-4aa4-4db4-8e24-6d2826b8cda3"),
+                            Id = new Guid("926baf38-d368-4cd1-977f-1c719a1f0669"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Practical Steel Gloves - 2",
-                            Price = 79.7873411808709m
+                            Price = 176.996869855806m
                         },
                         new
                         {
-                            Id = new Guid("de84e394-6cdf-4541-94b0-15c6e7c878f2"),
+                            Id = new Guid("0a2b3dc0-5159-41bc-a08e-d1dcf726b2bc"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Refined Plastic Shoes - 2",
-                            Price = 22.4416998890097m
+                            Price = 93.623608172477m
                         },
                         new
                         {
-                            Id = new Guid("ba7d3dd9-11a5-40e4-a834-5ef30ea25e96"),
+                            Id = new Guid("3f0e9b67-278a-4de3-aea3-2804c68b0e53"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Incredible Fresh Fish - 2",
-                            Price = 183.134064567585m
+                            Price = 190.032629144174m
                         },
                         new
                         {
-                            Id = new Guid("b1575097-8de7-4149-817a-0d410149aa59"),
+                            Id = new Guid("6364ece0-648d-461e-8a6a-4c9a283b2eb8"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Practical Granite Cheese - 2",
-                            Price = 360.917781681497m
+                            Price = 22.1480837611845m
                         },
                         new
                         {
-                            Id = new Guid("1231f7d0-2c73-4191-98a8-0c2d5859da69"),
+                            Id = new Guid("6339e813-8546-4d45-921b-247caeb0ce49"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Sleek Soft Chair - 2",
-                            Price = 362.166149961155m
+                            Price = 907.789404289946m
                         },
                         new
                         {
-                            Id = new Guid("31decece-561e-49b2-9670-e5b9f4b6f63b"),
+                            Id = new Guid("1184803b-72e6-4a26-afab-ae0ca627a08f"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Generic Steel Chair - 2",
-                            Price = 463.746445541399m
+                            Price = 794.439546788563m
                         },
                         new
                         {
-                            Id = new Guid("6c45155d-8c3f-427f-9582-d68e55627b9d"),
+                            Id = new Guid("8ad9bd03-e54a-4e95-9f51-b7b03ffe28fe"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Refined Concrete Shoes - 2",
-                            Price = 602.005703400139m
+                            Price = 334.480592826386m
                         },
                         new
                         {
-                            Id = new Guid("ddf0e2a1-0b6b-408f-86d0-f3afe91c4e3a"),
+                            Id = new Guid("13a496a3-4896-4835-81df-be01e257245d"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Tasty Rubber Table - 2",
-                            Price = 512.693949734431m
+                            Price = 842.910028221756m
                         },
                         new
                         {
-                            Id = new Guid("1b1cf5cc-5275-485a-8e94-986c86b874b6"),
+                            Id = new Guid("beae9670-e973-4d31-a5eb-290cd32e6a48"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Handmade Steel Ball - 2",
-                            Price = 865.462129756804m
+                            Price = 415.468161541968m
                         },
                         new
                         {
-                            Id = new Guid("f1d0083f-8ceb-4e14-a6b0-a2a5e3e338b6"),
+                            Id = new Guid("05a85f50-8129-40e7-8514-b87e5d3e2391"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Jewelery - 2",
-                            Price = 813.07878696388m
+                            Price = 525.309950448964m
                         },
                         new
                         {
-                            Id = new Guid("377ee7cf-8810-46e1-b12a-ed746b2dce07"),
+                            Id = new Guid("b0f20cf8-7bab-42d1-b397-5e4a0654f2b6"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Refined Cotton Gloves - 2",
-                            Price = 543.336335393538m
+                            Price = 71.1252320803028m
                         },
                         new
                         {
-                            Id = new Guid("d2fdcf80-8008-4657-9f20-a846cdb51611"),
+                            Id = new Guid("90843f21-c231-460a-af0f-5aab6fcbe04b"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Generic Rubber Pants - 2",
-                            Price = 59.2914103613335m
+                            Price = 948.73196263577m
                         },
                         new
                         {
-                            Id = new Guid("497f4a6f-ba01-403e-b727-65d2125c5677"),
+                            Id = new Guid("720edb4b-6d5b-462b-aec2-11affd18891e"),
                             Description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum lacus augue, a tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
                             ImageUrl = "https://via.placeholder.com/150",
                             Name = "Fantastic Plastic Table - 2",
-                            Price = 537.987288602403m
+                            Price = 888.09338293207m
                         });
                 });
 #pragma warning restore 612, 618

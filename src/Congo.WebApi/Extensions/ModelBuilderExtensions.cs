@@ -58,12 +58,12 @@ namespace Congo.WebApi.Extensions
                         "tempor enim sollicitudin eu. Pellentesque odio nulla, maximus id mattis posuere, semper ac massa. Donec quis " +
                         "lectus eros. Sed ac fringilla nunc. Proin lacus nisi, fermentum quis interdum nec, blandit in sapien. Phasellus " +
                         "bibendum volutpat tortor, a sagittis sapien finibus id. Etiam urna est, sagittis eget orci et, finibus luctus lacus. ",
-                        Price = (decimal)NextDouble(random, 0.99, 999.99),
+                        Price = (decimal)random.NextDouble(0.99, 999.99),
                         ImageUrl = "https://via.placeholder.com/150",
                     };
                 }
             }
         }
-        private static double NextDouble(Random random, double min, double max) => random.NextDouble() * (max - min) + min;
+        
     }
 }
