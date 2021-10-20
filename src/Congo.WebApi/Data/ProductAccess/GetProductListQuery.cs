@@ -1,6 +1,6 @@
-﻿using Congo.WebApi.Data.Models;
+﻿using System.Collections.Generic;
+using Congo.WebApi.Data.Models;
 using MediatR;
-using System.Collections.Generic;
 
 namespace Congo.WebApi.Data.ProductAccess
 {

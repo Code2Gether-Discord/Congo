@@ -1,5 +1,4 @@
-﻿using Congo.WebApi.Data.Configurations;
-using Congo.WebApi.Data.Models;
+﻿using Congo.WebApi.Data.Models;
 using Congo.WebApi.Extensions;
 using Microsoft.EntityFrameworkCore;
 

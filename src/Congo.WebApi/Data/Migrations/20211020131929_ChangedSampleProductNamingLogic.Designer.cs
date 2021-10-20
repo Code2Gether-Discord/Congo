@@ -4,14 +4,16 @@ using Congo.WebApi.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Congo.WebApi.Data.Migrations
 {
     [DbContext(typeof(CongoContext))]
-    partial class CongoContextModelSnapshot : ModelSnapshot
+    [Migration("20211020131929_ChangedSampleProductNamingLogic")]
+    partial class ChangedSampleProductNamingLogic
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
