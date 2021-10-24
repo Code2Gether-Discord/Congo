@@ -28,7 +28,7 @@ namespace Congo.WebApi.Data.ProductAccess
                 ProductId = product.Id
             });
 
-            _dbContext.Orders.Add(order);
+            await _dbContext.Orders.AddAsync(order);
 
             await _dbContext.SaveChangesAsync();
 
