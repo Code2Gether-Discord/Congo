@@ -25,7 +25,7 @@ namespace Congo.WebApi.Data.ProductAccess
                 Price = request.Price
             };
 
-            _dbContext.Products.Add(product);
+            await _dbContext.Products.AddAsync(product);
 
             await _dbContext.SaveChangesAsync();
 

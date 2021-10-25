@@ -29,11 +29,11 @@ namespace Congo.WebApi.Controllers
         }
 
         [HttpPost("{id}/purchase")]
-        public ActionResult<OrderConfirmationResponse> Purchase(Guid id)
+        public async Task<ActionResult<OrderConfirmationResponse>> Purchase(Guid id)
         {
-            var orderId = Guid.NewGuid();
+            var orderConfirmation = await _mediator.Send(new PurchaseProductCommand(id));
 
-            return new OrderConfirmationResponse { OrderId = orderId };
+            return orderConfirmation;
         }
     }
 }

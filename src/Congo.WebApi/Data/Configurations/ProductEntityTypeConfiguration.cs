@@ -17,6 +17,7 @@ namespace Congo.WebApi.Data.Configurations
 
             builder
                 .Property(x => x.Price)
+                .HasColumnType("decimal(19,4)")
                 .IsRequired();
         }
     }
