@@ -32,8 +32,10 @@
 
     private async Task Submit(EditContext editContext)
     {
-       await sellerClient.CreateProduct(Product);
-        StateHasChanged();
+       var product = await sellerClient.CreateProduct(Product);
+        StateHasChan0ged();
+        //ToDO : Add logic to return the Guid to the DialogBox
+        System.Diagnostics.Debug.Write(product.ToString()); 
 
     }
 
