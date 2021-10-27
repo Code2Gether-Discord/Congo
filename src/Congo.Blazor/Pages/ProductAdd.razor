@@ -1,6 +1,7 @@
 ﻿@page "/products/add"
 @using System.ComponentModel.DataAnnotations
 @using Congo.Contracts.Requests.Products
+@inject IDialogService DialogService
 
 <MudLink Href="/">Back to Home</MudLink>
 
@@ -19,7 +20,7 @@
             </MudForm>
         </MudCardContent>
         <MudCardActions>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialog" Class="ml-auto">Save</MudButton>
         </MudCardActions>
     </MudCard>
 </EditForm>
@@ -32,4 +33,10 @@
     {
         StateHasChanged();
     }
+
+    private void OpenDialog()
+        {
+            DialogService.Show<AddProductDialog>("Confirm Order");
+        }
+ 
 }
