@@ -2,6 +2,7 @@
 @using System.ComponentModel.DataAnnotations
 @using Congo.Contracts.Requests.Products
 @inject IDialogService DialogService
+@inject ICongoSellerClient sellerClient
 
 <MudLink Href="/">Back to Home</MudLink>
 
@@ -29,14 +30,16 @@
     MudForm form;
     InsertProductRequest Product = new InsertProductRequest();
 
-    void Submit(EditContext editContext)
+    private async Task Submit(EditContext editContext)
     {
+       await sellerClient.CreateProduct(Product);
         StateHasChanged();
+
     }
 
     private void OpenDialog()
-        {
-            DialogService.Show<AddProductDialog>("Confirm Order");
-        }
- 
+    {
+        DialogService.Show<AddProductDialog>("Confirm Order");
+    }
+
 }
