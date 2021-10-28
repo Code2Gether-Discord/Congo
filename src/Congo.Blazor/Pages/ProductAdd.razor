@@ -4,9 +4,13 @@
 @inject IDialogService DialogService
 @inject ICongoSellerClient sellerClient
 
-<MudLink Href="/">Back to Home</MudLink>
 
-<EditForm Model="@Product" OnValidSubmit="@Submit">
+@if (DidSave)
+{
+    <MudAlert Severity="Severity.Success" ContentAlignment="HorizontalAlignment.Center" ShowCloseIcon="true" CloseIconClicked="(() => CloseMe(false))">Product was saved successfully!</MudAlert>
+}
+
+<EditForm Model="@Product" OnValidSubmit="@AddProduct">
     <DataAnnotationsValidator />
     <MudCard>
         <MudCardHeader>
@@ -21,7 +25,7 @@
             </MudForm>
         </MudCardContent>
         <MudCardActions>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="OpenDialog" Class="ml-auto">Save</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => AddProduct())" Class="ml-auto">Save</MudButton>
         </MudCardActions>
     </MudCard>
 </EditForm>
@@ -30,12 +34,23 @@
     MudForm form;
     InsertProductRequest Product = new InsertProductRequest();
 
-    private async Task Submit(EditContext editContext)
+    private bool DidSave { get; set; }
+
+    private void CloseMe(bool value)
     {
-       var product = await sellerClient.CreateProduct(Product);
+        if (value) DidSave = false;
+    }
+
+    private async Task AddProduct()
+    {
+        
+        var product = await sellerClient.CreateProduct(Product);
+
+        if (product.IsSuccessStatusCode) DidSave = true;// show a success message
+
         StateHasChanged();
         //ToDO : Add logic to return the Guid to the DialogBox
-        System.Diagnostics.Debug.Write(product.ToString()); 
+        System.Diagnostics.Debug.Write(product.ToString());
 
     }
 
