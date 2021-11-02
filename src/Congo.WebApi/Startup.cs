@@ -1,3 +1,4 @@
+using System;
 using Congo.WebApi.Extensions;
 using Congo.WebApi.Validators;
 using FluentValidation.AspNetCore;
@@ -13,6 +14,9 @@ namespace Congo.WebApi
 {
     public class Startup
     {
+        readonly string _CORS_DEV = "cors_dev";
+        readonly string _CORS_PROD = "cors_prod";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -24,8 +28,29 @@ namespace Congo.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAppServices(Configuration);
-
             services.AddControllers();
+
+            services.AddCors(options =>
+            {
+                //DEV
+                options.AddPolicy(_CORS_DEV, policy =>
+                            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+                //PROD
+                //TODO: Multiple Origins from env vars
+                options.AddPolicy(_CORS_PROD, policy =>
+                {
+                    string ALLOWED_ORIGIN = Environment.GetEnvironmentVariable("ALLOWED_ORIGIN");
+                    if (ALLOWED_ORIGIN != null)
+                    {
+                        //Debug.WriteLine("ALLOWED_ORIGIN = " + x);
+                        policy.WithOrigins(ALLOWED_ORIGIN).AllowAnyMethod().AllowAnyHeader();
+                    }
+                    else if(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")
+                        // to prevent this error in dev env
+                        throw new Exception("No Environment variable value set for ALLOWED_ORIGIN");
+                });
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Congo.WebApi", Version = "v1" });
@@ -47,6 +72,17 @@ namespace Congo.WebApi
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // Middleware is ordered
+            // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-5.0#middleware-order-1
+            if (env.IsDevelopment())
+            {
+                app.UseCors(_CORS_DEV);
+            }
+            else
+            {
+                app.UseCors(_CORS_PROD);
+            }
 
             app.UseAuthorization();
 
