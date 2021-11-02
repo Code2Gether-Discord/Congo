@@ -1,14 +1,9 @@
 ﻿@page "/products/add"
 @using System.ComponentModel.DataAnnotations
 @using Congo.Contracts.Requests.Products
-@inject IDialogService DialogService
 @inject ICongoSellerClient sellerClient
+@inject ISnackbar snackBar
 
-
-@if (DidSave)
-{
-    <MudAlert Severity="Severity.Success" ContentAlignment="HorizontalAlignment.Center" ShowCloseIcon="true" CloseIconClicked="(() => CloseMe(false))">Product was saved successfully!</MudAlert>
-}
 
 <EditForm Model="@Product" OnValidSubmit="@AddProduct">
     <DataAnnotationsValidator />
@@ -46,17 +41,12 @@
         
         var product = await sellerClient.CreateProduct(Product);
 
-        if (product.IsSuccessStatusCode) DidSave = true;// show a success message
+        if (product.IsSuccessStatusCode) snackBar.Add("New Product successfully added!", Severity.Success);// show a success message
+        else snackBar.Add("There was a problem processing this request!", Severity.Error);
 
         StateHasChanged();
         //ToDO : Add logic to return the Guid to the DialogBox
         System.Diagnostics.Debug.Write(product.ToString());
-
-    }
-
-    private void OpenDialog()
-    {
-        DialogService.Show<AddProductDialog>("Confirm Order");
     }
 
 }
