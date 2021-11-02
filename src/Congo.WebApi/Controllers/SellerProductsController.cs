@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Congo.WebApi.Controllers
 {
     [ApiController]
-    [Route("api/{seller}")]
+    [Route("api/[controller]")]
     public class SellerProductsController : ControllerBase
     {
         private readonly IMediator _mediator;

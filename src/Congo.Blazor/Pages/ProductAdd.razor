@@ -1,10 +1,11 @@
 ﻿@page "/products/add"
 @using System.ComponentModel.DataAnnotations
 @using Congo.Contracts.Requests.Products
+@inject ICongoSellerClient sellerClient
+@inject ISnackbar snackBar
 
-<MudLink Href="/">Back to Home</MudLink>
 
-<EditForm Model="@Product" OnValidSubmit="@Submit">
+<EditForm Model="@Product" OnValidSubmit="@AddProduct">
     <DataAnnotationsValidator />
     <MudCard>
         <MudCardHeader>
@@ -19,7 +20,7 @@
             </MudForm>
         </MudCardContent>
         <MudCardActions>
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Save</MudButton>
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(() => AddProduct())" Class="ml-auto">Save</MudButton>
         </MudCardActions>
     </MudCard>
 </EditForm>
@@ -28,8 +29,24 @@
     MudForm form;
     InsertProductRequest Product = new InsertProductRequest();
 
-    void Submit(EditContext editContext)
+    private bool DidSave { get; set; }
+
+    private void CloseMe(bool value)
     {
-        StateHasChanged();
+        if (value) DidSave = false;
     }
+
+    private async Task AddProduct()
+    {
+        
+        var product = await sellerClient.CreateProduct(Product);
+
+        if (product.IsSuccessStatusCode) snackBar.Add("New Product successfully added!", Severity.Success);// show a success message
+        else snackBar.Add("There was a problem processing this request!", Severity.Error);
+
+        StateHasChanged();
+        //ToDO : Add logic to return the Guid to the DialogBox
+        System.Diagnostics.Debug.Write(product.ToString());
+    }
+
 }

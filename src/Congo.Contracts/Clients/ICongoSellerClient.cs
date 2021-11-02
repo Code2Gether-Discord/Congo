@@ -7,7 +7,7 @@ namespace Congo.Contracts.Clients
 {
     public interface ICongoSellerClient
     {
-        [Post("/api/{seller}/products")]
+        [Post("/api/[controller]/products")]
         Task<ApiResponse<Guid>> CreateProduct(InsertProductRequest product);
     }
 }
