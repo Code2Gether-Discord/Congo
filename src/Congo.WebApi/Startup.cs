@@ -67,6 +67,7 @@ namespace Congo.WebApi
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Congo.WebApi v1"));
+                app.UseCors(config => config.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
             }
 
             app.UseHttpsRedirection();
