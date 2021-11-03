@@ -37,16 +37,19 @@ namespace Congo.WebApi
 
                 options.AddPolicy(_CORS_PROD, policy =>
                 {
-                    //TODO: Multiple Origins from env vars
+                    // TODO: Multiple Origins from env vars
                     string ALLOWED_ORIGIN = Environment.GetEnvironmentVariable("ALLOWED_ORIGIN");
-                    if (ALLOWED_ORIGIN != null)
+
+                    if (!string.IsNullOrWhiteSpace(ALLOWED_ORIGIN))
                     {
                         //Debug.WriteLine("ALLOWED_ORIGIN = " + ALLOWED_ORIGIN);
                         policy.WithOrigins(ALLOWED_ORIGIN).AllowAnyMethod().AllowAnyHeader();
                     }
                     else if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")
-                        // to prevent this exception in dev env
-                        throw new Exception("No value set for env ALLOWED_ORIGIN.");
+                    {
+                        // by default, this exception is thrown even in dev env without the above check
+                        throw new Exception("No value set for mandatory environment variable ALLOWED_ORIGIN.");
+                    }
                 });
             });
             services.AddSwaggerGen(c =>
@@ -60,6 +63,8 @@ namespace Congo.WebApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-5.0#middleware-order-1
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -71,7 +76,6 @@ namespace Congo.WebApi
 
             app.UseRouting();
 
-            // https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware/?view=aspnetcore-5.0#middleware-order-1
             app.UseCors(env.IsDevelopment() ? _CORS_DEV : _CORS_PROD);
 
             app.UseAuthorization();
