@@ -47,7 +47,7 @@ namespace Congo.WebApi
                     }
                     else if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") != "Development")
                     {
-                        // by default, this exception is thrown even in dev env without the above check
+                        // Don't throw any exceptions in development, as this policy should only be used in production
                         throw new Exception("No value set for mandatory environment variable ALLOWED_ORIGIN.");
                     }
                 });
