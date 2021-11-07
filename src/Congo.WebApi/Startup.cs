@@ -67,7 +67,7 @@ namespace Congo.WebApi
             TypeAdapterConfig.GlobalSettings.NewConfig<CartItem, CartItemResponse>()
                 .Map(dest => dest.TotalPrice, src => src.Quantity * src.Product.Price);
             TypeAdapterConfig.GlobalSettings.NewConfig<Cart, CartResponse>()
-                .Map(dest => dest.TotalPrice, src => src.CartItems.Sum(i => i.Product.Price));
+                .Map(dest => dest.TotalPrice, src => src.CartItems.Sum(i => i.Product.Price * i.Quantity));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
