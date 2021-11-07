@@ -7,7 +7,7 @@ namespace Congo.Contracts.Responses.Cart
     {
         public Guid Id { get; init; }
 
-        public ICollection<CartItemResponse> CartItems { get; init; }
+        public IReadOnlyCollection<CartItemResponse> CartItems { get; init; }
 
         public decimal TotalPrice { get; init; }
 
