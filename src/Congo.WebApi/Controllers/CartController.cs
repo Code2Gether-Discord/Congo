@@ -17,19 +17,13 @@ namespace Congo.WebApi.Controllers
 
         public CartController(IMediator mediator) => _mediator = mediator;
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<CartResponse>>> Get()
-        {
-            var carts = await _mediator.Send(new GetCartsQuery());
-            return Ok(carts.Adapt<IEnumerable<CartResponse>>());
-        }
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<IEnumerable<CartItemResponse>>> Get(Guid id)
+        public async Task<ActionResult<IEnumerable<CartResponse>>> Get(Guid id)
         {
-            var cartItems = await _mediator.Send(new GetCartItemsQuery(id));
-            return Ok(cartItems.Adapt<IEnumerable<CartItemResponse>>());
+            var cartItems = await _mediator.Send(new GetCartQuery(id));
+            return Ok(cartItems.Adapt<IEnumerable<CartResponse>>());
         }
     }
 }

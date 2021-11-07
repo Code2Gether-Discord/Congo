@@ -7,5 +7,5 @@ namespace Congo.WebApi.Data.CartAccess
 {
     public record GetCartsQuery : IRequest<IEnumerable<Cart>>;
 
-    public record GetCartItemsQuery(Guid Id) : IRequest<IEnumerable<CartItem>>;
+    public record GetCartQuery(Guid Id) : IRequest<Cart>;
 }
