@@ -1,11 +1,7 @@
 using System;
-using System.Linq;
-using Congo.Contracts.Responses.Cart;
-using Congo.WebApi.Data.Models;
 using Congo.WebApi.Extensions;
 using Congo.WebApi.Validators;
 using FluentValidation.AspNetCore;
-using Mapster;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -63,11 +59,7 @@ namespace Congo.WebApi
             services.AddMediatR(typeof(Startup).Assembly);
             services.AddFluentValidation(fv =>
                 fv.RegisterValidatorsFromAssemblyContaining<InsertProductRequestValidator>());
-
-            TypeAdapterConfig.GlobalSettings.NewConfig<CartItem, CartItemResponse>()
-                .Map(dest => dest.TotalPrice, src => src.Quantity * src.Product.Price);
-            TypeAdapterConfig.GlobalSettings.NewConfig<Cart, CartResponse>()
-                .Map(dest => dest.TotalPrice, src => src.CartItems.Sum(i => i.Product.Price * i.Quantity));
+            MapperExtensions.AddPriceMappingConfig();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -90,7 +82,10 @@ namespace Congo.WebApi
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
+            });
         }
     }
 }
