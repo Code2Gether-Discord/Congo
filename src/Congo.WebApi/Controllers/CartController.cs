@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Cart;
 using Congo.WebApi.Data.CartAccess;
@@ -18,12 +17,11 @@ namespace Congo.WebApi.Controllers
         public CartController(IMediator mediator) => _mediator = mediator;
 
 
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<ActionResult<IEnumerable<CartResponse>>> Get(Guid id)
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CartResponse>> Get(Guid id)
         {
-            var cartItems = await _mediator.Send(new GetCartQuery(id));
-            return Ok(cartItems.Adapt<IEnumerable<CartResponse>>());
+            var cart = await _mediator.Send(new GetCartQuery(id));
+            return Ok(cart.Adapt<CartResponse>());
         }
     }
 }
