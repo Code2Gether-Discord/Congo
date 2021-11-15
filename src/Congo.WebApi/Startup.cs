@@ -33,7 +33,7 @@ namespace Congo.WebApi
             services.AddCors(options =>
             {
                 options.AddPolicy(_CORS_DEV, policy =>
-                            policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+                    policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
                 options.AddPolicy(_CORS_PROD, policy =>
                 {
@@ -57,7 +57,9 @@ namespace Congo.WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Congo.WebApi", Version = "v1" });
             });
             services.AddMediatR(typeof(Startup).Assembly);
-            services.AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<InsertProductRequestValidator>());
+            services.AddFluentValidation(fv =>
+                fv.RegisterValidatorsFromAssemblyContaining<InsertProductRequestValidator>());
+            MapperExtensions.AddPriceMappingConfig();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
