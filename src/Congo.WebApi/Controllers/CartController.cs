@@ -18,7 +18,7 @@ namespace Congo.WebApi.Controllers
 
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CartResponse>> Get(Guid id)
+        public async Task<ActionResult<CartResponse>> GetCartById(Guid id)
         {
             var cart = await _mediator.Send(new GetCartQuery(id));
             return Ok(cart.Adapt<CartResponse>());
