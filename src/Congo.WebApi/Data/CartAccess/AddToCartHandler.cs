@@ -12,7 +12,7 @@ namespace Congo.WebApi.Data.CartAccess
     public class AddToCartHandler : IRequestHandler<AddToCartCommand, Guid>
     {
         private readonly CongoContext _dbContext;
-        private Cart cart;
+        private Cart _cart;
 
         public AddToCartHandler(CongoContext dbContext)
         {
@@ -24,27 +24,27 @@ namespace Congo.WebApi.Data.CartAccess
             
             if (request.cartId != null)
             {
-                cart = await _dbContext.Carts.FirstOrDefaultAsync(c => c.Id == request.cartId);
+                _cart = await _dbContext.Carts.FirstOrDefaultAsync(c => c.Id == request.cartId);
             }
             else
             {
-                cart = new Cart();
+                _cart = new Cart();
+                await _dbContext.Carts.AddAsync(_cart);
             }
                 
             var cartItem = new CartItem
             {
                 Id = request.product.Id,
-                CartId = cart.Id,
+                CartId = _cart.Id,
                 Product = request.product,
                 Quantity = 1
 
             };
-            await _dbContext.CartItems.AddAsync(cartItem);
 
+            await _dbContext.CartItems.AddAsync(cartItem);
             await _dbContext.SaveChangesAsync();
 
-            return cart.Id;
+            return _cart.Id;
         }
-
     }    
 }
