@@ -8,5 +8,4 @@ namespace Congo.WebApi.Data.CartAccess
     {
         public record AddToCartCommand(Guid? cartId, Product product) : IRequest<Guid>;
     }
-   
 }
