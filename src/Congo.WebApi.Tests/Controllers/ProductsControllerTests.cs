@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Congo.Contracts.Responses.Orders;
 using Congo.WebApi.Controllers;
 using FluentAssertions;
 using MediatR;
@@ -13,7 +12,7 @@ namespace Congo.WebApi.Tests
     public class ProductsControllerTests
     {
         private readonly Mock<IMediator> mediatorMoq;
-        private ProductsController _subject;
+        private readonly ProductsController _subject;
 
         public ProductsControllerTests()
         {
