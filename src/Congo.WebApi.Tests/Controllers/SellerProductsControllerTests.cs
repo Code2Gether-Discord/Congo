@@ -27,7 +27,7 @@ namespace Congo.WebApi.Tests
             var product = new InsertProductRequest { Name = "Les pains boulogne whole", Description = "...", Price = 1.59m, ImageUrl = "" };
 
             // Act
-            var productId = await _subject.Create(product);
+            var productId = await _subject.CreateProduct(product);
 
             // Assert
             productId.Value.Should().Be(Guid.Empty);
