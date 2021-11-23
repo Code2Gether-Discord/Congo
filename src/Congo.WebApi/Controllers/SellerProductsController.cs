@@ -20,7 +20,7 @@ namespace Congo.WebApi.Controllers
 
         [HttpPost]
         [Route("products")]
-        public async Task<ActionResult<Guid>> Create(InsertProductRequest product)
+        public async Task<ActionResult<Guid>> CreateProduct(InsertProductRequest product)
         {
             var productId = await _mediator.Send(new InsertProductCommand
                 (product.Name, product.Description, product.Price, product.ImageUrl));
