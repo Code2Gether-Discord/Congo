@@ -25,11 +25,13 @@ namespace Congo.WebApi.Controllers
             return Ok(cart.Adapt<CartResponse>());
         }
 
-        [HttpPost("{cartId}")]
-        public async Task<ActionResult<Cart>> Post(Guid? cartId, Product product)
+        [HttpPost("/add-to-cart")]
+        [ProducesResponseType(204)]
+        [ProducesResponseType(typeof(Guid), 200)]
+        public async Task<ActionResult> AddToCart(Guid? cartId, Product product, int quantity)
         {
-            var cart = await _mediator.Send(new AddToCartCommand(cartId, product));
-            return Ok(cart.Adapt<Cart>());
+            var cart = await _mediator.Send(new AddToCartCommand(cartId, product.Id, quantity));
+            return Ok(cart);
         }
     }
 }
