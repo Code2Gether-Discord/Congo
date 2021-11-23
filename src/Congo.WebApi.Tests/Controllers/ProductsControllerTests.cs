@@ -11,13 +11,13 @@ namespace Congo.WebApi.Tests
 {
     public class ProductsControllerTests
     {
-        private readonly Mock<IMediator> mediatorMoq;
+        private readonly Mock<IMediator> _mediatorMoq;
         private readonly ProductsController _subject;
 
         public ProductsControllerTests()
         {
-            mediatorMoq = new Mock<IMediator>();
-            _subject = new ProductsController(mediatorMoq.Object);
+            _mediatorMoq = new Mock<IMediator>();
+            _subject = new ProductsController(_mediatorMoq.Object);
         }
 
         [Fact]
