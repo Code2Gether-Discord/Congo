@@ -21,30 +21,41 @@ namespace Congo.WebApi.Data.CartAccess
 
         public async Task<Guid> Handle(AddToCartCommand request, CancellationToken cancellationToken)
         {
-            
+            if (request.cartId == null)
+            {
+                _cart = new Cart() { Id = Guid.NewGuid() };
+            }
+            else if (request.cartId != null && await _dbContext.Carts.FindAsync(request.cartId) != null)
+            {
+
+            }
+
             if (request.cartId != null)
             {
-                _cart = await _dbContext.Carts.FirstOrDefaultAsync(c => c.Id == request.cartId);
+                await _dbContext.Carts.FirstOrDefaultAsync(c => c.Id == request.cartId);
             }
-            else
+            else if(_dbContext.Carts.AnyAsync(c => c.Id == request.cartId))
             {
-                _cart = new Cart();
+                _cart = new Cart(){Id = Guid.NewGuid()};
                 await _dbContext.Carts.AddAsync(_cart);
             }
-                
-            var cartItem = new CartItem
-            {
-                Id = request.product.Id,
-                CartId = _cart.Id,
-                Product = request.product,
-                Quantity = 1
-
-            };
+            
 
             await _dbContext.CartItems.AddAsync(cartItem);
             await _dbContext.SaveChangesAsync();
 
             return _cart.Id;
         }
-    }    
+        private async Task<CartItem> AddCartItem(AddToCartCommand request, int quantity)
+        {
+            return new CartItem
+            {
+                Id = Guid.NewGuid(),
+                CartId = _cart.Id,
+                Product = await _dbContext.Products.FirstOrDefaultAsync(p => p.Id == request.productId),
+                Quantity = request.quantity
+            };
+        }
+    }
+    
 }
