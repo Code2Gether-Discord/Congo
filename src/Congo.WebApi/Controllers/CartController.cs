@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Cart;
 using Congo.WebApi.Data.CartAccess;
@@ -31,6 +32,8 @@ namespace Congo.WebApi.Controllers
         public async Task<ActionResult> AddToCart(Guid? cartId, Product product, int quantity)
         {
             var cart = await _mediator.Send(new AddToCartCommand(cartId, product.Id, quantity));
+            if (cart == Guid.Empty)
+                return Ok(HttpStatusCode.BadRequest);
             return Ok(cart);
         }
     }
