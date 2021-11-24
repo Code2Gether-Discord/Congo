@@ -21,26 +21,23 @@ namespace Congo.WebApi.Data.CartAccess
 
         public async Task<Guid> Handle(AddToCartCommand request, CancellationToken cancellationToken)
         {
-            if (request.cartId == null)
+            var cart = await _dbContext.Carts.FindAsync(request.cartId);
+            var product = await _dbContext.Products.FindAsync(request.productId);
+            if (request.cartId != null && cart != null)
             {
-                _cart = new Cart() { Id = Guid.NewGuid() };
+                _cart = cart;
             }
-            else if (request.cartId != null && await _dbContext.Carts.FindAsync(request.cartId) != null)
+            else if (request.cartId == null)
             {
-
-            }
-
-            if (request.cartId != null)
-            {
-                await _dbContext.Carts.FirstOrDefaultAsync(c => c.Id == request.cartId);
-            }
-            else if(_dbContext.Carts.AnyAsync(c => c.Id == request.cartId))
-            {
-                _cart = new Cart(){Id = Guid.NewGuid()};
+                _cart = new Cart()
+                {
+                    Id = Guid.NewGuid(),
+                };
                 await _dbContext.Carts.AddAsync(_cart);
             }
-            
+            else return Guid.Empty;
 
+            var cartItem = await AddCartItem(request, request.quantity);
             await _dbContext.CartItems.AddAsync(cartItem);
             await _dbContext.SaveChangesAsync();
 
