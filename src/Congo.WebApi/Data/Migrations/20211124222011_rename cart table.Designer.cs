@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Congo.WebApi.Data.Migrations
 {
     [DbContext(typeof(CongoContext))]
-    [Migration("20211106222650_carts")]
-    partial class carts
+    [Migration("20211124222011_rename cart table")]
+    partial class renamecarttable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
