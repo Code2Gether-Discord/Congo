@@ -1,5 +1,4 @@
 ﻿using System;
-using Congo.WebApi.Data.Models;
 using MediatR;
 
 namespace Congo.WebApi.Data.CartAccess

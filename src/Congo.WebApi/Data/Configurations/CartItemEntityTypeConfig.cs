@@ -17,6 +17,7 @@ namespace Congo.WebApi.Data.Configurations
             builder
                 .HasOne(x => x.Product)
                 .WithMany()
+                .HasForeignKey(x => x.ProductId)
                 .IsRequired();
         }
     }

@@ -1,9 +1,7 @@
 using System;
-using System.Net;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Cart;
 using Congo.WebApi.Data.CartAccess;
-using Congo.WebApi.Data.Models;
 using Mapster;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
