@@ -15,7 +15,10 @@ namespace Congo.WebApi.Data.CartAccess
 
         public async Task<Cart> Handle(GetCartQuery request, CancellationToken cancellationToken)
         {
-            var cart = await _dbContext.Carts.AsNoTracking()
+            var cart = await _dbContext.Carts
+                .AsNoTracking()
+                .Include(c => c.CartItems)
+                .ThenInclude(ci => ci.Product)
                 .FirstOrDefaultAsync(c => c.Id == request.Id, cancellationToken);
 
             _ = cart ?? throw new KeyNotFoundException($"Cart with id: {request.Id} was not found");
