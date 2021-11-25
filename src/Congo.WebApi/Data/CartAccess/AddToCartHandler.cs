@@ -39,7 +39,7 @@ namespace Congo.WebApi.Data.CartAccess
 
             var cartItem = await AddCartItem(request, request.quantity);
             await _dbContext.CartItems.AddAsync(cartItem);
-            await _dbContext.SaveChangesAsync();
+            _dbContext.SaveChanges();
 
             return _cart.Id;
         }
