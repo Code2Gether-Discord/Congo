@@ -27,7 +27,7 @@ namespace Congo.WebApi.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cart");
+                    b.ToTable("Carts");
                 });
 
             modelBuilder.Entity("Congo.WebApi.Data.Models.CartItem", b =>
@@ -51,7 +51,7 @@ namespace Congo.WebApi.Data.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("CartItem");
+                    b.ToTable("CartItems");
                 });
 
             modelBuilder.Entity("Congo.WebApi.Data.Models.Order", b =>
