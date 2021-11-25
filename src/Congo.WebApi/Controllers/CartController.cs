@@ -33,7 +33,7 @@ namespace Congo.WebApi.Controllers
         {
             var cart = await _mediator.Send(new AddToCartCommand(cartId, productId, quantity));
             if (cart == Guid.Empty)
-                return Ok(HttpStatusCode.BadRequest);
+                return BadRequest();
             return Ok(cart);
         }
     }
