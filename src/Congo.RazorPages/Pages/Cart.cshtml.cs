@@ -16,9 +16,16 @@ namespace Congo.RazorPages.Pages
         {
             _cartService = cartService;
         }
-        public async Task<IActionResult> OnGetAsync(Guid id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            Cart = await _cartService.GetCart(id);
+            string cartId;
+            if (Request.Cookies.ContainsKey("cartId"))
+                Cart = await _cartService.GetCart(Guid.Parse(Request.Cookies["cartId"]));
+            else
+            {
+                cartId = (await _cartService.GetCart()).ToString();
+                Response.Cookies.Append("cartId", cartId);
+            }
 
             return Page();
         }

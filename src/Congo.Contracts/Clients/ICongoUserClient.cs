@@ -17,6 +17,6 @@ namespace Congo.Contracts.Clients
         Task<ApiResponse<OrderConfirmationResponse>> PurchaseProduct(Guid id);
 
         [Get("/api/cart/{id}")]
-        Task<ApiResponse<CartResponse>> GetCart(Guid id);
+        Task<ApiResponse<CartResponse>> GetCart(Guid? id);
     }
 }

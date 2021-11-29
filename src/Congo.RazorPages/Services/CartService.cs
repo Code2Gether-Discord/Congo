@@ -14,7 +14,7 @@ namespace Congo.RazorPages.Services
         {
             _client = client;
         }
-        public async Task<CartResponse> GetCart(Guid cartId)
+        public async Task<CartResponse> GetCart(Guid? cartId)
         {
             return (await _client.GetCart(cartId)).Content;
 
