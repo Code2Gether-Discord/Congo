@@ -20,8 +20,8 @@
                     <form onsubmit="addToCart(@product.Id, document.getElementById('productQuantity').value)">
                         <div class="form-group">
                             <div class="product-quantity">
-                                <label asp-for="ProductQuantity" class="control-label">Quantity</label>
-                                <input asp-for="ProductQuantity" class="form-control" type="number" id="productQuantity" name="productQuantity" size=5 min="1"/>
+                                <label class="control-label">Quantity</label>
+                                <input class="form-control" type="number" id="productQuantity" name="productQuantity" size=5 min="1"/>
                             </div>
                             <div class="add-to-cart">
                                 <button type="submit" class="btn btn-primary mx-2 my-4" asp-page="Products" asp-page-handler="addtocart" asp-route-id="@product.Id">
