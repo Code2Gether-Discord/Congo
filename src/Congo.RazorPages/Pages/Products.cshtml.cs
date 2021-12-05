@@ -26,8 +26,9 @@ namespace Congo.RazorPages.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostPurchaseAsync(Guid id)
+        public async Task<IActionResult> OnPostAddToCartAsync(Guid id)
         {
+            // TODO: Update for add to cart instead of purchase order
             var order = await _productsService.PurchaseAsync(id);
             return RedirectToPage("/OrderSuccessful", new { order.OrderId });
         }
