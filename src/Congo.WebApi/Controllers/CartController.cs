@@ -2,6 +2,7 @@ using System;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Cart;
 using Congo.WebApi.Data.CartAccess;
+using Congo.WebApi.Requests.Cart;
 using Mapster;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -27,9 +28,9 @@ namespace Congo.WebApi.Controllers
         [HttpPost("/add-to-cart")]
         [ProducesResponseType(204)]
         [ProducesResponseType(typeof(Guid), 200)]
-        public async Task<ActionResult> AddToCart(Guid? cartId, Guid productId, int quantity)
+        public async Task<ActionResult> AddToCart(AddToCartRequest request)
         {
-            var cart = await _mediator.Send(new AddToCartCommand(cartId, productId, quantity));
+            var cart = await _mediator.Send(new AddToCartCommand(request.CartId, request.ProductId, request.Quantity));
             if (cart == Guid.Empty)
                 return BadRequest();
             return Ok(cart);
