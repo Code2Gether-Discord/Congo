@@ -26,11 +26,11 @@ namespace Congo.RazorPages.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAddToCartAsync(Guid id)
+        public async Task<IActionResult> OnPostAddToCartAsync(Guid productId, int quantity)
         {
-            // TODO: Update for add to cart instead of purchase order
-            var order = await _productsService.PurchaseAsync(id);
-            return RedirectToPage("/OrderSuccessful", new { order.OrderId });
+            // call _cartService.AddToCart(new AddToCartRequest(...))
+            await Task.Delay(0);
+            return new OkObjectResult(true);
         }
     }
 }

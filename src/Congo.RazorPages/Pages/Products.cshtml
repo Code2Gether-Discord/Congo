@@ -6,55 +6,38 @@
 
 <h1>Products</h1>
 <div class="container-fluid">
-
-        <div class="row">
-            @foreach (var product in Model.Products)
-            {
-                <div class="card col-sm-12 col-md-4 col-lg-3 m-1">
-                    <img class="card-img-top pt-3" src="@product.ImageUrl" alt="@product.Name">
-                    <div class="card-body">
-                        <h4>@product.Name</h4>
-                        <p>$@product.Price</p>
-                    </div>
-
-                    <form onsubmit="addToCart('@product.Id', document.getElementById('productQuantity').value)">
-                        <div class="form-group">
-                            <div class="product-quantity">
-                                <label class="control-label">Quantity</label>
-                                <input class="form-control" type="number" id="productQuantity" name="productQuantity" size=5 min="1" placeholder="1"/>
-                            </div>
-                            <div class="add-to-cart">
-                                <button type="submit" class="btn btn-primary mx-2 my-4" asp-page="Products" asp-page-handler="addtocart" asp-route-id="@product.Id">
-                                    Add to Cart
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+            <div class="card col-sm-12 col-md-4 col-lg-3 m-1">
+                <img class="card-img-top pt-3" src="@product.ImageUrl" alt="@product.Name">
+                <div class="card-body">
+                    <h4>@product.Name</h4>
+                    <p>$@product.Price</p>
                 </div>
-            }
-        </div>
 
+                <form method="post" asp-page-handler="AddToCart" data-ajax="true" data-ajax-method="post" data-ajax-success="AddedToCart">
+                    <input type="hidden" name="productId" value="@product.Id" />
+                    <div class="form-group">
+                        <div class="product-quantity">
+                            <label class="control-label">Quantity</label>
+                            <input class="form-control" type="number" name="quantity" size=5 min="1" value="1" />
+                        </div>
+                        <div class="add-to-cart">
+                            <button type="submit" class="btn btn-primary mx-2 my-4">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
 </div>
 
 <script>
-async function addToCart(productId, quantity)
+function AddedToCart()
 {
-    try {
-        const response = await fetch("https://localhost:44347/api/add-to-cart", 
-        {
-            method: "POST",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                productId: productId,
-                quantity: quantity
-            })
-        });
-
-        const data = await response.json();
-        console.log("SUCCESS:", data);
-    }
-    catch(e) {
-        console.error("ERROR:", e);
-    }
+    // show a message or something saying that we've added the product
 }
 </script>
