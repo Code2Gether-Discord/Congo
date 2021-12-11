@@ -12,6 +12,7 @@ namespace Congo.RazorPages.Extensions
         public static void AddAppServices(this IServiceCollection services)
         {
             services.AddScoped<IProductsService, ProductsService>();
+            services.AddScoped<ICartService, CartService>();
         }
 
         public static void AddHttpClients(this IServiceCollection services, IConfiguration config)
