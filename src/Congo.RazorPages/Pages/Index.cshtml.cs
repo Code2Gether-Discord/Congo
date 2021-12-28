@@ -1,20 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace Congo.RazorPages.Pages
+namespace Congo.RazorPages.Pages;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly ILogger<IndexModel> _logger;
+
+    public IndexModel(ILogger<IndexModel> logger)
     {
-        private readonly ILogger<IndexModel> _logger;
+        _logger = logger;
+    }
 
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
+    public void OnGet()
+    {
 
-        public void OnGet()
-        {
-
-        }
     }
 }

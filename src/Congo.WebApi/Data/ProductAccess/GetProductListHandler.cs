@@ -6,20 +6,19 @@ using Congo.WebApi.Data.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace Congo.WebApi.Data.ProductAccess
+namespace Congo.WebApi.Data.ProductAccess;
+
+public class GetProductListHandler : IRequestHandler<GetProductListQuery, IEnumerable<Product>>
 {
-    public class GetProductListHandler : IRequestHandler<GetProductListQuery, IEnumerable<Product>>
+    private readonly CongoContext _dbContext;
+
+    public GetProductListHandler(CongoContext dbContext)
     {
-        private readonly CongoContext _dbContext;
+        _dbContext = dbContext;
+    }
 
-        public GetProductListHandler(CongoContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
-
-        public Task<IEnumerable<Product>> Handle(GetProductListQuery request, CancellationToken cancellationToken)
-        {
-            return Task.FromResult(_dbContext.Products.AsNoTracking().AsEnumerable());
-        }
+    public Task<IEnumerable<Product>> Handle(GetProductListQuery request, CancellationToken cancellationToken)
+    {
+        return Task.FromResult(_dbContext.Products.AsNoTracking().AsEnumerable());
     }
 }

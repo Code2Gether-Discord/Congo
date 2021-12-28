@@ -2,14 +2,13 @@ using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Congo.RazorPages.Pages
-{
-    public class OrderSuccessful : PageModel
-    {
-        [FromQuery] public Guid OrderId { get; set; }
+namespace Congo.RazorPages.Pages;
 
-        public void OnGet()
-        {
-        }
+public class OrderSuccessful : PageModel
+{
+    [FromQuery] public Guid OrderId { get; set; }
+
+    public void OnGet()
+    {
     }
 }
