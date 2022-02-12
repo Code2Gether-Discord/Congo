@@ -28,6 +28,6 @@ namespace Congo.WebApi.Tests
 
             // Assert
             cartResponse.Result.Should().BeAssignableTo<OkObjectResult>();
-        }
+        } 
     }
 }
