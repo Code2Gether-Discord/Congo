@@ -28,6 +28,7 @@ namespace Congo.WebApi.Controllers
         [HttpPost("add-to-cart")]
         [ProducesResponseType(204)]
         [ProducesResponseType(typeof(Guid), 200)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult> AddToCart(AddToCartRequest request)
         {
             var cart = await _mediator.Send(new AddToCartCommand(CurrentCartId, request.ProductId, request.Quantity));
