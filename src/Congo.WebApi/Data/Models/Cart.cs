@@ -7,5 +7,6 @@ namespace Congo.WebApi.Data.Models
     {
         public Guid Id { get; init; }
         public ICollection<CartItem> CartItems { get; set; } = new List<CartItem>();
+        public bool IsNewCart { get; set; } = true;
     }
 }
