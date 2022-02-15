@@ -6,21 +6,38 @@
 
 <h1>Products</h1>
 <div class="container-fluid">
-    <form method="post">
-        <div class="row">
-            @foreach (var product in Model.Products)
-            {
-                <div class="card col-sm-12 col-md-4 col-lg-3 m-1">
-                    <img class="card-img-top pt-3" src="@product.ImageUrl" alt="@product.Name">
-                    <div class="card-body">
-                        <h4>@product.Name</h4>
-                        <p>$@product.Price</p>
-                    </div>
-                    <button class="btn btn-primary mx-2 my-4" asp-page-handler="purchase" asp-route-id="@product.Id">
-                        Purchase
-                    </button>
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+            <div class="card col-sm-12 col-md-4 col-lg-3 m-1">
+                <img class="card-img-top pt-3" src="@product.ImageUrl" alt="@product.Name">
+                <div class="card-body">
+                    <h4>@product.Name</h4>
+                    <p>$@product.Price</p>
                 </div>
-            }
-        </div>
-    </form>
+
+                <form method="post" asp-page-handler="AddToCart" data-ajax="true" data-ajax-method="post" data-ajax-success="AddedToCart">
+                    <input type="hidden" name="productId" value="@product.Id" />
+                    <div class="form-group">
+                        <div class="product-quantity">
+                            <label class="control-label">Quantity</label>
+                            <input class="form-control" type="number" name="quantity" size=5 min="1" value="1" />
+                        </div>
+                        <div class="add-to-cart">
+                            <button type="submit" class="btn btn-primary mx-2 my-4">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
 </div>
+
+<script>
+function AddedToCart()
+{
+    // show a message or something saying that we've added the product
+}
+</script>

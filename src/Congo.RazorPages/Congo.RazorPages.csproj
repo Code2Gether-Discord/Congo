@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Congo.Contracts\Congo.Contracts.csproj" />
+    <ProjectReference Include="..\Congo.WebApi\Congo.WebApi.csproj" />
   </ItemGroup>
 
 </Project>

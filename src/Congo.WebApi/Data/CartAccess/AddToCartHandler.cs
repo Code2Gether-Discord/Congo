@@ -2,14 +2,16 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using Congo.Contracts.Responses.Cart;
 using Congo.WebApi.Data.Models;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using static Congo.WebApi.Data.CartAccess.CartCommands;
 
 namespace Congo.WebApi.Data.CartAccess
 {
-    public class AddToCartHandler : IRequestHandler<AddToCartCommand, Guid>
+    public class AddToCartHandler : IRequestHandler<AddToCartCommand, Cart>
     {
         private readonly CongoContext _dbContext;
 
@@ -18,17 +20,22 @@ namespace Congo.WebApi.Data.CartAccess
             _dbContext = dbContext;
         }
 
-        public async Task<Guid> Handle(AddToCartCommand request, CancellationToken cancellationToken)
+        public async Task<Cart> Handle(AddToCartCommand request, CancellationToken cancellationToken)
         {
             var cart = await _dbContext.Carts
                 .Include(c => c.CartItems)
                 .FirstOrDefaultAsync(C => C.Id == request.cartId);
 
+            if (cart != null)
+            {
+                cart.IsNewCart = false;
+            }
+
             var product = await _dbContext.Products.FindAsync(request.productId);
             
             if (request.cartId != null && cart == null)
             {
-                return Guid.Empty;
+                return null;
             }
             else if (request.cartId == null)
             {
@@ -43,7 +50,7 @@ namespace Congo.WebApi.Data.CartAccess
 
             await _dbContext.SaveChangesAsync();
 
-            return cart.Id;
+            return cart;
         }
 
         private async Task AddCartItem(AddToCartCommand request, Cart cart, Product product, CongoContext _dbContext)

@@ -1,0 +1,8 @@
+﻿input, label {
+    display: block;
+}
+
+.product-quantity {
+    float: left;
+    margin-right: 20px;
+}

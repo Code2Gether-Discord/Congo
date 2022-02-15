@@ -2,6 +2,8 @@ using System;
 using System.Threading.Tasks;
 using Congo.Contracts.Responses.Cart;
 using Congo.WebApi.Data.CartAccess;
+using Congo.WebApi.Data.Models;
+using Congo.WebApi.Requests.Cart;
 using Mapster;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -24,15 +26,30 @@ namespace Congo.WebApi.Controllers
             return Ok(cart.Adapt<CartResponse>());
         }
 
-        [HttpPost("/add-to-cart")]
+        [HttpPost("add-to-cart")]
         [ProducesResponseType(204)]
-        [ProducesResponseType(typeof(Guid), 200)]
-        public async Task<ActionResult> AddToCart(Guid? cartId, Guid productId, int quantity)
+        [ProducesResponseType(typeof(CartResponse), 200)]
+        [ProducesResponseType(400)]
+        public async Task<ActionResult<CartResponse>> AddToCart(AddToCartRequest request)
         {
-            var cart = await _mediator.Send(new AddToCartCommand(cartId, productId, quantity));
-            if (cart == Guid.Empty)
+            var cart = await _mediator.Send(new AddToCartCommand(CurrentCartId, request.ProductId, request.Quantity));
+
+            if (cart == null)
                 return BadRequest();
-            return Ok(cart);
+            else if (!cart.IsNewCart)
+                return NoContent();
+
+            return Ok(cart.Adapt<CartResponse>());
+        }
+
+        private Guid? CurrentCartId
+        {
+            get
+            {
+                if (Guid.TryParse(HttpContext.Request.Cookies["cart_id"], out var cartId))
+                    return cartId;
+                return null;
+            }
         }
     }
 }
