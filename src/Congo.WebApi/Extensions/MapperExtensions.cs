@@ -1,4 +1,3 @@
-using System.Linq;
 using Congo.Contracts.Responses.Cart;
 using Congo.WebApi.Data.Models;
 using Mapster;

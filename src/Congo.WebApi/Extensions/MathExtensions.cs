@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Congo.WebApi.Extensions;
+﻿namespace Congo.WebApi.Extensions;
 
 public static class MathExtensions
 {

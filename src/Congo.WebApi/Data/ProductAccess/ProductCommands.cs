@@ -1,5 +1,4 @@
-﻿using System;
-using Congo.Contracts.Responses.Orders;
+﻿using Congo.Contracts.Responses.Orders;
 using MediatR;
 
 namespace Congo.WebApi.Data.ProductAccess;

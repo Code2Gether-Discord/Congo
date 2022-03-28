@@ -1,7 +1,4 @@
-﻿using System;
-using System.Threading;
-using System.Threading.Tasks;
-using Congo.WebApi.Data.Models;
+﻿using Congo.WebApi.Data.Models;
 using MediatR;
 
 namespace Congo.WebApi.Data.ProductAccess;

@@ -1,4 +1,3 @@
-using System;
 using Congo.WebApi.Data.Models;
 using MediatR;
 

@@ -1,7 +1,5 @@
 ﻿using Congo.WebApi.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Congo.WebApi.Extensions;
 

@@ -1,5 +1,3 @@
-using System;
-
 namespace Congo.WebApi;
 
 public class WeatherForecast

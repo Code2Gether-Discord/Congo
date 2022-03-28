@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 using Congo.WebApi.Data.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;

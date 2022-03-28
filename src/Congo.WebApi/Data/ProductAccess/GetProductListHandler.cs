@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Congo.WebApi.Data.Models;
+﻿using Congo.WebApi.Data.Models;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
