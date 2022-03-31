@@ -5,21 +5,20 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Refit;
 
-namespace Congo.RazorPages.Extensions
+namespace Congo.RazorPages.Extensions;
+
+public static class ServicesExtensions
 {
-    public static class ServicesExtensions
+    public static void AddAppServices(this IServiceCollection services)
     {
-        public static void AddAppServices(this IServiceCollection services)
-        {
-            services.AddScoped<IProductsService, ProductsService>();
-        }
+        services.AddScoped<IProductsService, ProductsService>();
+    }
 
-        public static void AddHttpClients(this IServiceCollection services, IConfiguration config)
-        {
-            var congoApiUri = new Uri(config["CongoApi"]);
+    public static void AddHttpClients(this IServiceCollection services, IConfiguration config)
+    {
+        var congoApiUri = new Uri(config["CongoApi"]);
 
-            services.AddRefitClient<ICongoUserClient>()
-                .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
-        }
+        services.AddRefitClient<ICongoUserClient>()
+            .ConfigureHttpClient(x => x.BaseAddress = congoApiUri);
     }
 }

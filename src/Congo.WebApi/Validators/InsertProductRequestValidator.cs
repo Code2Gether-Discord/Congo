@@ -1,14 +1,13 @@
 ﻿using Congo.Contracts.Requests.Products;
 using FluentValidation;
 
-namespace Congo.WebApi.Validators
+namespace Congo.WebApi.Validators;
+
+public class InsertProductRequestValidator : AbstractValidator<InsertProductRequest>
 {
-    public class InsertProductRequestValidator : AbstractValidator<InsertProductRequest>
+    public InsertProductRequestValidator()
     {
-        public InsertProductRequestValidator()
-        {
-            RuleFor(x => x.Name).NotNull();
-            RuleFor(x => x.Price).InclusiveBetween(0, decimal.MaxValue);
-        }
+        RuleFor(x => x.Name).NotNull();
+        RuleFor(x => x.Price).InclusiveBetween(0, decimal.MaxValue);
     }
 }

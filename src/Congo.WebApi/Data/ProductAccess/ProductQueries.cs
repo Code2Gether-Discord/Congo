@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using Congo.WebApi.Data.Models;
+﻿using Congo.WebApi.Data.Models;
 using MediatR;
 
-namespace Congo.WebApi.Data.ProductAccess
-{
-    public record GetProductListQuery : IRequest<IEnumerable<Product>>;
-}
+namespace Congo.WebApi.Data.ProductAccess;
+
+public record GetProductListQuery : IRequest<IEnumerable<Product>>;
